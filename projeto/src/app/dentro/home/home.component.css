@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+}
+
+
+
+body{
+    background-image: linear-gradient(#a95415, #793909);
+}
+
+
+#container {
+    height: 100vh;
+    background-image: url('http://1.bp.blogspot.com/-NdDzxlAMI0I/VH3Gkv1neqI/AAAAAAAACBA/BlHgy8Rb8tY/s1600/efeit%2Bonda.png');
+}
+
+#headercontainer {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#icon {
+    margin-left: 50px;
+    margin-top: 20px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#containernav {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 5px;
+}
+
+#containernav a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    width: 130px;
+    height: 50px;
+    border: 5px solid transparent;
+    transition: 0.3s;
+    border-radius: 14px;
+    margin-left: 10px;
+}
+
+#containernav a:hover {
+    background-color: #d46815;
+}
+
+#person {
+    margin-top: 20px;
+    margin-right: 50px;
+    width: 170px;
+    height: 120px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#iconperson {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d46815;
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#menuicon{
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    margin-top: 400px;
+    border-radius: 20px;
+    z-index: 2;
+    background-color: #fff;
+    width: 0px;
+    height: 0px;
+    font-size: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#a, #b, #c{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0px;
+    height: 0px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#menuicon a{
+    text-decoration: none;
+    color: #000;
+}
+
+#a:hover, #b:hover, #c:hover{
+    background-color: rgb(235, 235, 235);
+    color: #d46815;
+    fill: #d46815;
+    cursor: pointer;
+}
+
+#menuicon span{
+    text-decoration: none;
+    margin-left: 35px;
+}
+
+.ionicon{
+    position: absolute;
+    margin-left: 20px;
+    left: 0;
+    width: 30px;
+}
+
+#icona, #iconb, #iconc{
+    width: 0;
+}
+
+
+#celularmao {
+    width: 450px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#maincontainer {
+    margin-top: 50px;
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#containerapp {
+    width: 500px;
+    height: 400px;
+}
+
+#headercontainerapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+}
+
+#mainscontainerapp {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+#fundocelular {
+    position: absolute;
+    width: 190px;
+    height: 400px;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 100px;
+    margin-right: 215px;
+    border-radius: 20px;
+    background-color: #d46815;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titulofundocelular {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    top: 0;
+    margin-top: 40px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#containerfundocelular {
+    width: 150px;
+    height: 200px;
+    background-color: #a95415;
+    border-radius: 20px
+}
+
+#headercelular {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#iconcelular {
+    width: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+#maincelular {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+#login,
+#senha {
+    width: 70px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+@media(max-width: 600px){
+    #containernav a{
+        width: 80px;
+        font-size: 14px;
+    }
+
+    #icon{
+        width: 60px;
+        height: 60px;
+    }
+
+    #maincontainer{
+        display: none;
+    }
+
+    #celularmao{
+        width: 400px;
+    }
+
+    #fundocelular{
+        margin-right: 192px;
+        width:  170px;
+        margin-bottom: 90px;
+        height: 360px;
+    }
+
+    #titulofundocelular{
+        margin-top: 20px;
+    }
+}

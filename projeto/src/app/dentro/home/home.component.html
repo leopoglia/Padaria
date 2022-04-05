@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="headercontainer">
+            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=250&dpr=2" alt="">
+            <nav id="containernav">
+                <a href="padaria/"><img src="https://i.imgur.com/kvFs5A7.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
+                <a href="padaria/produtos"><img src="https://i.imgur.com/e3euscz.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
+                <a href="padaria/sobre"><img src="https://i.imgur.com/X9ArgDx.png"  style="width: 20px; margin-right: 5px;"  alt=""> Sobre</a>
+                <div id="hoverbuton"></div>
+            </nav>
+            <div id="person">
+                <img id="iconperson" (click)="menuicon()" [src]="img64" alt="">
+            </div>
+
+            <div id="menuicon">
+                <a href="padaria/perfil"><div id="a"><svg xmlns="http://www.w3.org/2000/svg" id="icona" class="ionicon" viewBox="0 0 512 512"><title>Person</title><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg><span href="">PERFIL</span></div></a>
+                <a href="padaria/carrinho"><div id="b"><svg xmlns="http://www.w3.org/2000/svg" id="iconb" class="ionicon" viewBox="0 0 512 512"><title>Cart</title><circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="400" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 80h64l48 272h256"/><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg><span href="">CARRINHO</span></div></a>
+                <a (click)="logout()"><div id="c"><svg xmlns="http://www.w3.org/2000/svg" id="iconc" class="ionicon" viewBox="0 0 512 512"><title>Log In</title><path d="M192 176v-40a40 40 0 0140-40h160a40 40 0 0140 40v240a40 40 0 01-40 40H240c-22.09 0-48-17.91-48-40v-40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M288 336l80-80-80-80M80 256h272"/></svg><span href="">LOGOUT</span></div></a>
+            </div>
+        </div>
+        <div id="maincontainer">
+            <div id="containerapp">
+                <div id="headercontainerapp">PEDIU? CHEGOU!</div>
+                <div id="mainscontainerapp">Instale agora o nosso aplicativo em sua loja de aplicativos favorita, feito para todos vocês o melhor de nós, aproveite os descontos. =)</div>
+            </div>
+        </div>
+
+        <img id="celularmao" src="https://i.pinimg.com/originals/e3/9f/ff/e39fffa63103ae0b7fbfc79da81595ce.png" alt="">
+        <div id="fundocelular">
+            <div id="titulofundocelular">BEM-VINDO AO APLICATIVO, FAÇA LOGIN!</div>
+            <div id="containerfundocelular">
+                <div id="headercelular">
+                    <img id="iconcelular" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=250&dpr=2" alt="">
+                </div>
+                <div id="maincelular">
+                    <input id="login" type="text">
+                    <input id="senha" type="password">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footercontainer"></div>
+</body>
+
+
+</html>

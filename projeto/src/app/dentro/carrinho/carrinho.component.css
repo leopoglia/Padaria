@@ -1,0 +1,351 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    overflow-y: scroll;
+    background: grey;
+    box-shadow: inset 0 0 4px #707070;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #964406;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #793604;
+}
+
+#container {
+    height: 100vh;
+    background-image: url('http://1.bp.blogspot.com/-NdDzxlAMI0I/VH3Gkv1neqI/AAAAAAAACBA/BlHgy8Rb8tY/s1600/efeit%2Bonda.png');
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    overflow-y: scroll;
+    background: grey;
+    box-shadow: inset 0 0 4px #707070;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #535353;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #424242;
+}
+
+::-webkit-scrollbar-thumb:active{
+    background: #000;
+}
+
+#imgproduto{
+    width: 200px;
+    height: 180px;
+}
+
+#headercontainer {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    background-color: #9E4E12;
+}
+
+#icon {
+    margin-left: 50px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#containernav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
+    margin-left: 10px;
+
+}
+
+#containernav a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #fff;
+    width: 120px;
+    height: 60%;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+#containernav a:hover {
+    background-color: #d46815;
+    color: #fff;
+}
+
+#person {
+    margin-right: 50px;
+    width: 170px;
+    height: 120px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#iconperson {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d46815;
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#menuicon{
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    margin-top: 390px;
+    border-radius: 8px;
+    z-index: 2;
+    background-color: #fff;
+    width: 0px;
+    height: 0px;
+    font-size: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#a, #b, #c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menuicon a{
+    text-decoration: none;
+    color: #000;
+}
+
+#a:hover, #b:hover, #c:hover{
+    background-color: rgb(235, 235, 235);
+    color: #d46815;
+    fill: #d46815;
+    cursor: pointer;
+}
+
+#menuicon span{
+    text-decoration: none;
+    margin-left: 35px;
+}
+
+#icona, #iconb, #iconc{
+    width: 0;
+    position: absolute;
+    margin-left: 20px;
+    left: 0;
+}
+
+#a:hover, #b:hover, #c:hover{
+    background-color: rgb(235, 235, 235);
+    color: #d46815;
+    fill: #d46815;
+}
+
+
+#icona:hover, #iconb:hover, #iconc:hover{
+    color: #793604 ;
+}
+
+
+.containerprodutos{
+    width: 80%;
+    height: 75%;
+    text-align: center;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#produto{
+    height: 200px;
+    background-color: #c7c7c7;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px;
+    border-radius: 20px;
+    z-index: 1;
+    width: 90%;
+}
+
+#imgproduto{
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+
+.produtoinfos{
+    width: 100%;
+    height: 100%;
+}
+
+.produtoname{
+    width: 100%;
+    height: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.produtodesc{
+    width: 100%;
+    height: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 16px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: justify;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.produtofooter{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estrelas{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preco{
+    width: 40%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    background-color: #d46815;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.preco:hover{
+    background-color: #964406;
+}
+
+.estrelas .ionicon{
+    width: 25px;
+    height: 25px;
+    color: rgb(180, 143, 21);
+    cursor: pointer;
+}
+
+.preco .ionicon{
+    margin-top: 3px;
+    width: 25px;
+    height: 25px;
+    fill: #eeeeee;
+}
+
+.preco p{
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: #eeeeee;
+}
+
+
+#fundocarrinho{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#carrinho{
+    width: 80%;
+    height: 80%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+#fundotitulo{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titulo{
+    font-size: 30px;
+}
+
+#x{
+    margin-left: 80%;
+    height: 30px;
+    width: 30px;
+    background-color: #d46815;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+@media(max-width: 600px){
+    #containernav a{
+        width: 80px;
+        font-size: 14px;
+    }
+
+    #icon{
+        width: 60px;
+        height: 60px;
+    }
+}

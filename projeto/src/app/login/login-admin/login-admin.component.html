@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+
+<body>
+
+    <div id="fundovoltar" (click)="voltar()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Back</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
+    </div>
+
+    <div id="divlogo">
+        <h1>Registro</h1>
+    </div>
+    <img id="logo" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=250&dpr=2" alt="">
+
+
+    <div id="container">
+        <div id="inputdiv">
+            <input id="login" (click)="loginn()" [(ngModel)]="login" type="text" placeholder="Login"><span class="log" id="spanlogin">Login</span>
+            <input id="senha" (click)="senhaa()" [(ngModel)]="senha" type="password" placeholder="Senha"><span class="log" id="spansenha">Senha</span>
+            <input id="registro" (click)="nomee()" [(ngModel)]="nome" type="text" placeholder="Nome ou apelido"><span class="log" id="spannome">Nome</span>
+            <div id="fundoinputicon">
+                <div id="checkbox"><input type="checkbox" id="check">
+                    <p>ACEITE OS <br> <a href="" id="termos">TERMOS DE SERVIÇO</a></p>
+                </div>
+                <label id="inputicon" for="files" class="btn"><img id="fotoprofile" alt="">INSIRA UMA FOTO
+            </label>
+                <input type="file" style="visibility: hidden; width: 0%" id="files" title="escolha uma foto de perfil" [(ngModel)]="img" (change)="mudanca($event.target.files[0])">
+            </div>
+            <button id="subimit" (click)="registrar()">REGISTAR</button>
+            <a href="/login">
+                <h4 id="registrese">ou Logar-se</h4>
+            </a>
+
+
+        </div>
+
+        <div id="googlediv">
+        </div>
+    </div>
+
+    <div id="alertaerro">
+        Erro ao registrar-se
+    </div>
+
+</body>
+
+</html>

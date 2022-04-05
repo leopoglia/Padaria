@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADMIN</title>
+</head>
+<body>
+  <div id="container">
+    <div id="headercontainer">
+      <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=250&dpr=2" alt="">
+      <nav id="containernav">
+  <a href="padaria/"><img src="https://i.imgur.com/kvFs5A7.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
+              <a href="padaria/produtos"><img src="https://i.imgur.com/e3euscz.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
+              <a href="padaria/sobre"><img src="https://i.imgur.com/X9ArgDx.png"  style="width: 20px; margin-right: 5px;"  alt=""> Sobre</a>
+          <div id="hoverbuton"></div>
+      </nav>
+      <div id="person">
+          <img id="iconperson" (click)="menuicon()" [src]=img64  alt="">
+      </div>
+
+      <div id="menuicon">
+        <a href="padaria/perfil"><div id="a"><svg xmlns="http://www.w3.org/2000/svg" id="icona" class="ionicon" viewBox="0 0 512 512"><title>Person</title><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg><span href="">PERFIL</span></div></a>
+        <a href="padaria/carrinho"><div id="b"><svg xmlns="http://www.w3.org/2000/svg" id="iconb" class="ionicon" viewBox="0 0 512 512"><title>Cart</title><circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="400" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 80h64l48 272h256"/><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg><span href="">CARRINHO</span></div></a>
+        <a (click)="logout()"><div id="c"><svg xmlns="http://www.w3.org/2000/svg" id="iconc" class="ionicon" viewBox="0 0 512 512"><title>Log In</title><path d="M192 176v-40a40 40 0 0140-40h160a40 40 0 0140 40v240a40 40 0 01-40 40H240c-22.09 0-48-17.91-48-40v-40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M288 336l80-80-80-80M80 256h272"/></svg><span href="">LOGOUT</span></div></a>
+     </div>
+  </div>
+
+    
+    <div id="fundocriarproduto">
+      <div id="criarproduto">
+        <div id="headercriarproduto"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Megaphone</title><path d="M407.94 52.22S321.3 160 240 160H80a16 16 0 00-16 16v96a16 16 0 0016 16h160c81.3 0 167.94 108.23 167.94 108.23 6.06 8 24.06 2.52 24.06-9.83V62c0-12.31-17-18.82-24.06-9.78zM64 256s-16-6-16-32 16-32 16-32M448 246s16-4.33 16-22-16-22-16-22M256 160v128M112 160v128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M144 288v168a8 8 0 008 8h53a16 16 0 0015.29-20.73C211.91 416.39 192 386.08 192 336h16a16 16 0 0016-16v-16a16 16 0 00-16-16h-16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>PRODUTO</div>
+        <div id="dadosproduto">
+          <input id="nomeproduto" [(ngModel)]='nomeproduto'  type="text" class="inputmargin" placeholder="NOME">
+          <input id="descricaoproduto" [(ngModel)]='descricao'  type="text" class="inputmargin" placeholder="DESCRIÇÃO">
+          <input id="precoproduto" [(ngModel)]='preco'  type="text" class="inputmargin" placeholder="PREÇO EM BITCOIN">
+          <div id="fundoinputicon">
+            <label id="inputicon" [(ngModel)]='foto'  for="files" class="btn"><div id="fotoproduto">FOTO</div>
+            </label>
+            <input type="file" style="visibility: hidden; width: 0%" id="files" (change)="mudanca($event.target.files[0])"  title="escolha uma foto de perfil">
+            </div>
+        </div>
+        <div id="footerdadosprodutos">
+          <div id="botaoenviar" (click)="criarproduto()">ADICIONAR PRODUTO</div>
+        </div>
+      </div>
+      <div id="menuprodutos">      
+        <div id="listarprodutos">
+          <input type="text" id="nomeproduto" placeholder="ID do Produto:" [(ngModel)]='excluir'>
+          <div id="botaolistar" (click)="excluirproduto()">EXCLUIR PRODUTO</div>
+        </div>
+        <div id="editarproduto">
+          <div id="botaolistar">EDITAR PRODUTO</div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

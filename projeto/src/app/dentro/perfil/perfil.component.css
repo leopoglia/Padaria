@@ -1,0 +1,484 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    overflow-y: scroll;
+    background: grey;
+    box-shadow: inset 0 0 4px #707070;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #964406;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #793604;
+}
+
+#container {
+    height: 100vh;
+    background-image: url('http://1.bp.blogspot.com/-NdDzxlAMI0I/VH3Gkv1neqI/AAAAAAAACBA/BlHgy8Rb8tY/s1600/efeit%2Bonda.png');
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    overflow-y: scroll;
+    background: grey;
+    box-shadow: inset 0 0 4px #707070;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #535353;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #424242;
+}
+
+::-webkit-scrollbar-thumb:active{
+    background: #000;
+}
+
+#imgproduto{
+    width: 200px;
+    height: 180px;
+}
+
+#headercontainer {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    background-color: #9E4E12;
+}
+
+#icon {
+    margin-left: 50px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#fundodivionsone{
+    width: 40%;
+}
+
+#containernav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
+    margin-left: 10px;
+
+}
+
+#containernav a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #fff;
+    width: 120px;
+    height: 60%;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+#containernav a:hover {
+    background-color: #d46815;
+    color: #fff;
+}
+
+#person {
+    margin-right: 50px;
+    width: 170px;
+    height: 120px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#iconperson {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d46815;
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#menuicon{
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    margin-top: 390px;
+    border-radius: 8px;
+    z-index: 2;
+    background-color: #fff;
+    width: 0px;
+    height: 0px;
+    font-size: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#a, #b, #c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menuicon a{
+    text-decoration: none;
+    color: #000;
+}
+
+#a:hover, #b:hover, #c:hover{
+    background-color: rgb(235, 235, 235);
+    color: #d46815;
+    fill: #d46815;
+    cursor: pointer;
+}
+
+#menuicon span{
+    text-decoration: none;
+    margin-left: 35px;
+}
+
+#icona, #iconb, #iconc{
+    width: 0;
+    position: absolute;
+    margin-left: 20px;
+    left: 0;
+}
+
+#a:hover, #b:hover, #c:hover{
+    background-color: rgb(235, 235, 235);
+    color: #d46815;
+    fill: #d46815;
+}
+
+
+#icona:hover, #iconb:hover, #iconc:hover{
+    color: #793604 ;
+}
+
+#maincontainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profilebackground{
+    width: 100%;
+    height: 70vh;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#divisiononebackground, #historico{
+    height: 40vh;
+    border-radius: 10px;
+    background-color: #c7c7c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#historico{
+    margin-left: 50px;
+    width: 30%;
+    height: 80%;
+    display: block !important;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#headerhistorico{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#adicionardinheiro{
+    width: 80%;
+    height: 70%;
+    background-color: #d46815;
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#adicionardinheiro:hover{
+    background-color: #9E4E12;
+}
+
+#adicionardinheiro svg{
+    margin-left: 10px;
+    padding: 2px;
+    width: 35px;
+    height: 35px;
+    fill: #fff;
+}
+
+.pedido{
+    width: 90%;
+    height: 80px;
+    background-color: #dbdbdb;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+#pedidos{
+    width: 100%;
+    height: 90%;
+    margin-left: 20px;
+}
+
+#fotoicon{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#fotoprofile{
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#fotoprofile:hover{
+    opacity: 70%;
+}
+
+#backgroundinputicon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#iconperson2{
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 100%;
+    transition: 0.3s;
+    border: 6px solid transparent;
+}
+
+#iconperson2:hover{
+    border: 6px solid #c2c6ca;
+}
+
+#infosprofile{
+    height: 80%;
+    width: 50%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#inputicon{
+    width:80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#infoprobileinput{
+    width: 100%;
+    height: 45px;
+    background-color: #dbdbdb;
+    opacity: 70%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+#infoprobileinput:hover{
+    opacity: 100%;
+}
+
+#divisiontwo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imgproduto{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#textos{
+    margin-top: 10px;
+    width: 90%;
+    height: 100%;
+    font-size: 13px;
+}
+
+#inserirdinheiro{
+    margin-top: 10px;
+    background-color: #c7c7c7;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.178);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#fundomodal{
+    width: 30%;
+    height: 70%;
+    border-radius: 8px;
+    background-color: #9E4E12;
+}
+
+#mainmodal{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#metamask{
+    width: 150px;
+    height: 150px;
+}
+
+#mainmodal #infoprobileinput{
+    width: 100%;
+    opacity: 100%;
+    padding: 15px;
+}
+
+#mainmodal #inserirdinheiro{
+    background-color: transparent;
+}
+
+#mainmodal #adicionardinheiro:hover{
+    background-color: #c55907;
+}
+
+#setabaixo{
+    width: 50px;
+}
+
+#fundoseta{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inputcoin{
+    width: 90%;
+    height: 90%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+#headermodal{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width: 950px){
+    #iconperson2{
+        width: 130px !important;
+        height: 130px !important;
+    }
+}
+
+@media(max-width: 600px){
+    #containernav a{
+        width: 80px;
+        font-size: 14px;
+    }
+
+    #icon{
+        width: 60px;
+        height: 60px;
+    }
+    
+    #profilebackground{
+        display: block;
+    }
+
+    #divisiononebackground{
+        width: 100%;
+    }
+
+    #historico{
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+
+    #fundodivionsone{
+        width: 100%;
+    }
+
+}

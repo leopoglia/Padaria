@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    min-height: 50px;
+    background-image: linear-gradient(#a95415, #793909);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 50px black;
+}
+
+#fundologo {
+    width: 240px;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 0px 20px black;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: #fff;
+}
+
+#logo {
+    z-index: 1;
+    width: 180px;
+}
+
+#insta,
+#face {
+    width: 40px;
+}
+
+main {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    background-color: #1f0500;
+    background-image: url("https://images.unsplash.com/photo-1587241321921-91a834d6d191?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJha2VyeXxlbnwwfHwwfHw%3D&w=1000&q=80");
+}
+
+#container1,
+#container2 {
+    width: 50%;
+    height: 100%;
+}
+
+#container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login {
+    width: 50%;
+    height: 60%;
+    min-width: 200px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px black;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    background-image: url('http://1.bp.blogspot.com/-NdDzxlAMI0I/VH3Gkv1neqI/AAAAAAAACBA/BlHgy8Rb8tY/s1600/efeit%2Bonda.png');
+    background-position: 0 -130PX;
+    background-size: 900px;
+}
+
+#loginseta {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#botaoentre {
+    width: 200px;
+    height: 80px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#botaoentre:hover {
+    background-color: #a95415;
+    font-size: 23px;
+}
+
+#setaentre {
+    width: 25px;
+}
+
+#ou {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ouou {
+    margin-bottom: 50px;
+}
+
+#loginapps {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#apps {
+    width: 300px;
+    cursor: pointer;
+}
+
+#applestore {
+    margin-left: 15px;
+}
+
+#loginapps svg:hover {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #a95415;
+}
+
+#cards {
+    position: absolute;
+    background-color: #fff;
+    padding: 5px;
+    bottom: 20px;
+    left: 20px;
+    width: 250px;
+    border-radius: 20px;
+}
+
+@media(max-height: 400px) {
+    #cards {
+        display: none;
+    }
+    #login {
+        display: none;
+    }
+}

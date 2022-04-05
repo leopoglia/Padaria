@@ -1,0 +1,602 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+}
+
+* {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    overflow-y: scroll;
+    background: grey;
+    box-shadow: inset 0 0 4px #707070;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #535353;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #424242;
+}
+
+::-webkit-scrollbar-thumb:active{
+    background: #303030;
+}
+
+
+#container {
+    min-height: 100vh;
+    background-color: #eeeeee;
+}
+
+#imgproduto{
+    width: 200px;
+    height: 180px;
+}
+
+#headercontainer {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    background-color: #9E4E12;
+}
+
+#icon {
+    margin-left: 50px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#containernav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
+    margin-left: 10px;
+
+}
+
+#containernav a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #fff;
+    width: 120px;
+    height: 60%;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+#containernav a:hover {
+    background-color: #d46815;
+    color: #fff;
+}
+
+#person {
+    margin-right: 50px;
+    width: 170px;
+    height: 120px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#iconperson {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d46815;
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#menuicon{
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    margin-top: 390px;
+    border-radius: 8px;
+    z-index: 2;
+    background-color: #fff;
+    width: 0px;
+    height: 0px;
+    font-size: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#a, #b, #c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menuicon a{
+    text-decoration: none;
+    color: #000;
+}
+
+#a:hover, #b:hover, #c:hover{
+    background-color: rgb(235, 235, 235);
+    border-radius: 8px;
+}
+
+#menuicon span{
+    text-decoration: none;
+    margin-left: 35px;
+}
+
+
+#icona, #iconb, #iconc{
+    width: 0;
+    position: absolute;
+    margin-left: 20px;
+    left: 0;
+}
+
+#a:hover, #b:hover, #c:hover{
+    background-color: rgb(235, 235, 235);
+    color: #d46815;
+    fill: #d46815;
+    cursor: pointer;
+}
+
+#menuicon .ionicon{
+    position: absolute;
+    margin-left: 20px;
+    left: 0;
+}
+
+#procurarprodutos{
+    width: 100%;
+    height: 50px;
+    background-color: #c7c7c7;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#inputprocurar, #inputprocurar2{
+    width: 400px;
+    height: 40px;
+    background-color: #eeeeee;
+    border-radius: 8px;
+    margin-right: 15px !important;
+}
+
+#inputprocurar:hover{
+    background-color: #dddddd;
+}
+
+#inputproduto{
+    margin-left: 35px;
+    font-size: 14px;
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#containerprodutos{
+    height: 100%;
+    background-color: #eeeeee;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.produto{
+    width: 700px;
+    height: 320px;
+    background-color: #c7c7c7;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.produto img{
+    border-radius: 20px;
+    margin: 10px;
+    width: 300px !important;
+    height: 300px !important;
+}
+
+
+.produtoinfos{
+    width: 100%;
+    height: 100%;
+}
+
+.produtoname{
+    width: 100%;
+    height: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+    font-size: 25px;
+    margin-top: 5px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.produtodesc{
+    width: 100%;
+    height: 200px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 16px;
+    padding-right: 10px;
+    font-size: 15px;
+    text-align: justify;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.produtofooter{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.estrelas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preco, .preco2{
+    width: 35%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #d46815;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.preco2{
+    width: 20% !important;
+}
+
+.preco:hover{
+    background-color: #964406;
+}
+
+.estrelas .ionicon, #comentarios .ionicon{
+    width: 20px;
+    height: 20px;
+    color: rgb(180, 143, 21);
+    cursor: pointer;
+}
+
+.estrelas .ionicon{
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.preco .ionicon{
+    margin-top: 3px;
+    width: 25px;
+    height: 25px;
+    fill: #eeeeee;
+}
+
+.preco p{
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: #eeeeee;
+}
+
+#inputprocurar .ionicon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: #c0c0c0;
+    border-radius: 50%;
+    padding: 5px;
+    fill: #eeeeee;
+}
+
+#inputprocurar .ionicon:hover{
+    background-color: #acacac;
+}
+
+#fundoproduto{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#produtoscima{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#produtoslaterais{
+    width: 350px;
+    height: 300px;
+    overflow: auto;
+    align-items: flex-start;
+    justify-content: center;
+    margin:10px;
+    box-sizing: border-box;
+}
+
+.produtolateral{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 320px !important;
+    height: 100px;
+    background-color: #c7c7c7;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+#fundocomentario{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#comentarios{
+    width: 74%;
+    height: 150px;
+    border-radius: 20px;
+    background-color: #c7c7c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotocomentario{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #000;
+    border: 2px solid #fff;
+    margin-left: 30px;
+}
+
+.fundofotocomentario{
+    width: 15 0px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partecomentario{
+    height: 100%;
+}
+
+.nomepessoacomentario{
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.estrelascoment{
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+}
+
+.comentariopessoa{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 14px;
+    margin-left: 10px;
+    height: 90px;
+    overflow: auto;
+}
+
+#imglateral{
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin: 10px;
+    background-color: #000;
+}
+
+#partetexto{
+    width: 200px;
+    height: 100%;
+}
+
+#titulopartelateral{
+    width: 100%;
+    height: 20px;
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+#descricaoprodutolateral{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 10px;
+    overflow: hidden;
+}
+
+#adicionarcomentario{
+    width: 200px;
+    height: 50px;
+}
+
+#inputprocurar2{
+    padding-left: 0px;
+    width: 500px;
+    display: flex;
+}
+
+#inputprocurar2 #inputproduto{
+    margin-left: 10px;
+}
+
+#btn{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d46815;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff;
+    font-size: 15px;
+}
+
+#todososcomentarios{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+#fundocoment{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#todososcomentarios .fotocomentario{
+    width: 150px;
+    height: 150px;
+}
+
+#coment{
+    width: 59vw;
+    height: 200px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: #c7c7c7;
+    display: flex;
+}
+
+#headercoment{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+#nomecoment{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+#fundcoment{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+
+@media(max-width: 1000px){
+    #produtoslaterais{
+        display: none;
+    }
+    #inputprocurar2{
+        width: 300px;
+    }
+}
+
+@media(max-width: 700px){
+    #comentarios{
+        width: 100%;
+    }
+
+    .produto{
+        width: 100%;
+    }
+}
+
+
+@media(max-width: 600px){
+    #produtoslaterais{
+        display: none;
+    }
+    .produtodesc{
+        font-size: 10px;
+    }
+    .estrelas{
+        display: none;
+    }
+
+    #btn{
+        width: 50px;
+    }
+    #inputprocurar2{
+        margin-right: 0px !important;
+    }
+
+    #containernav a{
+        width: 80px;
+        font-size: 14px;
+    }
+
+    #icon{
+        width: 60px;
+        height: 60px;
+    }
+    
+}
