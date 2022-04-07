@@ -16,10 +16,24 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { 
   }
 
-  img64 = localStorage.getItem('img64')
+  img64 = localStorage.getItem('img64');
+  idPessoa = localStorage.getItem('ID');
+  listamoeda = undefined;
 
 
   ngOnInit() {
+    fetch('/api/buscar_btc',
+    {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        idPessoa: this.idPessoa
+      }),
+    }).then(function (result) {
+      return result.json();
+    }).then((dados) => {
+      this.listamoeda = dados.list;
+    }
+    ).catch(function (erro) { console.log(erro); })
   }
 
   menuicon(){

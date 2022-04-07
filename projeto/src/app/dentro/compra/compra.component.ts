@@ -29,11 +29,25 @@ export class CompraComponent implements OnInit {
       this.lista = dados.list;
     }
     ).catch(function (erro) { console.log(erro); })
+
+    fetch('/api/buscar_btc',
+    {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        idPessoa: this.idPessoa
+      }),
+    }).then(function (result) {
+      return result.json();
+    }).then((dados) => {
+      this.listamoeda = dados.list;
+    }
+    ).catch(function (erro) { console.log(erro); })
   }
 
   img64 = localStorage.getItem('img64');
   idPessoa = localStorage.getItem('ID');
   id = undefined;
+  listamoeda = undefined;
   CEP = '';
   estado = '';
   cidade = '';

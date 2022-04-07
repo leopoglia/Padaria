@@ -338,6 +338,28 @@ body{
     border-radius: 100%;
 }
 
+#wallet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    background-color: #c55907;
+    border-radius: 20px;
+    margin-right: 20px;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#person .ionicon{
+    fill: #fff;
+    width: 22px;
+    position: relative;
+    margin-left: 0;
+}
+
 @media(max-width: 600px){
     #containernav a{
         width: 80px;

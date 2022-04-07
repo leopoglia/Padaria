@@ -19,7 +19,8 @@ export class PaoComponent implements OnInit {
   img64 = localStorage.getItem('img64')
   lista = [];
   valor = "";
-
+  idPessoa = localStorage.getItem('ID');
+  listamoeda = undefined;
   
   comprarItem(item) {
     this.router.navigate(['/padaria/', item.ID])
@@ -37,6 +38,18 @@ export class PaoComponent implements OnInit {
       }
       ).catch(function (erro) { console.log(erro); })
       
+      fetch('/api/buscar_btc',
+    {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        idPessoa: this.idPessoa
+      }),
+    }).then(function (result) {
+      return result.json();
+    }).then((dados) => {
+      this.listamoeda = dados.list;
+    }
+    ).catch(function (erro) { console.log(erro); })
   }
 
   menuicon() {

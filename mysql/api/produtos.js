@@ -108,7 +108,8 @@ inserirRota('/buscar_compra', function(dados, resposta) {
     INNER JOIN PRODUTO
     ON COMPRA.ID_PRODUTO = PRODUTO.ID
     INNER JOIN USER
-    ON COMPRA.ID_USUARIO = USER.ID;`).then(result => {
+    ON COMPRA.ID_USUARIO = USER.ID
+    where USER.ID  == "${dados.idPessoa}";`).then(result => {
         console.log('COMPRA BUSCADO COM SUCESSO')
         resposta({ list: result })
     }).catch(erro => {

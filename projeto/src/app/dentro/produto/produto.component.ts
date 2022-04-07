@@ -22,6 +22,8 @@ export class ProdutoComponent implements OnInit {
   img64 = localStorage.getItem('img64');
   idPessoa = localStorage.getItem('ID');
   comentario = undefined;
+  listamoeda = undefined;
+
 
   ngOnInit() {
     
@@ -61,6 +63,19 @@ export class ProdutoComponent implements OnInit {
         return result.json();
       }).then((dados) => {
         this.listacoment = dados.list;
+      }
+      ).catch(function (erro) { console.log(erro); })
+
+      fetch('/api/buscar_btc',
+      {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          idPessoa: this.idPessoa
+        }),
+      }).then(function (result) {
+        return result.json();
+      }).then((dados) => {
+        this.listamoeda = dados.list;
       }
       ).catch(function (erro) { console.log(erro); })
   }
