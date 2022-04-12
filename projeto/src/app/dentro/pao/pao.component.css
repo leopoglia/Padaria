@@ -169,13 +169,15 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    border: 1px solid #b6b6b6;
 }
 
 #inputprocurar {
     width: 400px;
     height: 40px;
+    border: 1px solid #b6b6b6;
     background-color: #eeeeee;
-    border-radius: 8px;
+    border-radius: 5px;
     margin-right: 5px !important;
 }
 
@@ -206,13 +208,15 @@ body {
     align-items: center;
     justify-content: flex-start;
     margin: 20px;
-    border-radius: 20px;
+    border-radius: 12px;
     z-index: 1;
+    border: 1px solid #b6b6b6;
 }
 
 .produto img {
-    border-radius: 20px;
+    border-radius: 12px;
     margin-left: 10px;
+    border: 1px solid #b6b6b6;
 }
 
 .produtoinfos {
@@ -229,7 +233,6 @@ body {
     justify-content: flex-start;
     padding-left: 15px;
     font-size: 20px;
-    font-weight: 600;
     box-sizing: border-box;
 }
 
@@ -273,7 +276,7 @@ body {
     justify-content: center;
     margin-right: 10px;
     background-color: #d46815;
-    border-radius: 20px;
+    border-radius: 12px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -285,12 +288,15 @@ body {
 .estrelas .ionicon {
     width: 25px;
     height: 25px;
-    color: rgb(180, 143, 21);
+    color: rgb(165, 162, 154);
     cursor: pointer;
 }
 
+.estrelas .ionicon:hover {
+    color: rgb(180, 143, 21);
+}
+
 .preco .ionicon {
-    margin-top: 3px;
     width: 25px;
     height: 25px;
     fill: #eeeeee;

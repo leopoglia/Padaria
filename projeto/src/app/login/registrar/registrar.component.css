@@ -71,7 +71,7 @@ svg {
     min-width: 350px;
     height: 580px;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -136,20 +136,21 @@ h1 {
 #registro {
     margin-top: 25px;
     width: 300px;
-    height: 50px;
-    border-radius: 10px;
+    height: 45px;
+    border-radius: 5px;
     border: none;
-    background-color: #cecece;
+    background-color: #ebebeb;
+    border: 1px solid #b6b6b6;
     outline: none;
     padding-left: 20px;
     transition: 0.3s;
 }
 
 #login:hover,
-#senha:hover,
-#submit:hover {
-    background-color: #cacaca;
+#senha:hover {
+    border: 1px solid #9b9b9b;
 }
+
 
 #subimit {
     margin-top: 50px !important;
@@ -159,6 +160,7 @@ h1 {
     cursor: pointer;
     background-color: #a95415;
     color: white;
+    border:  none !important;
 }
 
 #subimit:hover {
@@ -176,7 +178,11 @@ h1 {
 }
 
 #registrese {
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+#registrese:hover{
+    text-decoration: underline;
 }
 
 .log {

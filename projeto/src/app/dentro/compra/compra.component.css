@@ -221,12 +221,13 @@ body {
 
 #criarproduto {
     width: 50%;
-    height: 95%;
+    height: 85%;
     background-color: #c7c7c7;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #b6b6b6;
 }
 
 #menuprodutos {

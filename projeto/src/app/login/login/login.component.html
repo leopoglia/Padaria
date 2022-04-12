@@ -25,7 +25,6 @@
             <input id="login" (click)="loginn()" [(ngModel)]="login" type="text" placeholder="Login"><span class="log" id="spanlogin">Login</span>
             <input id="senha" (click)="senhaa()" [(ngModel)]="senha" type="password" placeholder="Senha"><span class="log" id="spansenha">Senha</span>
 
-            <div id="submitgoogle"></div>
 
             <div id="footercontainer">
                 <button id="subimit" (click)="entrar(login, senha)">ENTRAR</button>
@@ -35,8 +34,9 @@
             </div>
 
         </div>
+        <div id="fundogoogle">
         <button id="google" (click)="socialSignIn('google')"><img id="imggoogle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png" alt=""> Sign in with Google</button>
-
+        </div>
     </div>
 
 
