@@ -1,3 +1,4 @@
+import { getLocaleDayPeriods } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -5,9 +6,9 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-login-admin',
-  templateUrl: './login-admin.component.html',
-  styleUrls: ['./login-admin.component.css']
+  selector: 'app-registrar',
+  templateUrl: './registrar.component.html',
+  styleUrls: ['./registrar.component.css']
 })
 export class LoginAdminComponent implements OnInit {
   nome = '';
@@ -26,6 +27,7 @@ constructor(private router: Router) {
 
   img = undefined;
   img64 = undefined;
+  IDBTC = undefined;
 
   mudanca(file) {
     var reader = new FileReader();
@@ -70,6 +72,32 @@ constructor(private router: Router) {
       document.getElementById('alertaerro').style.width = "0px"
     }, 2000);
   })
+
+  fetch('/api/buscar_usuario_especifico',
+  {
+      method: 'POST',
+      body: JSON.stringify(
+          {
+              nickname: this.login
+          }
+      ),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  }
+).then(function (result){
+  return result.json();
+}).then((dados)=>{
+  console.log(dados.user.ID)
+  this.IDBTC = dados.user.ID
+  this.addbtc(this.IDBTC)
+ }).catch(function(erro){
+  console.log(erro)
+})  
+  }
+
+  addbtc(IDBTC){
+    fetch('/api/adicionar_btc', {method: 'POST', body: JSON.stringify({idPessoa: this.IDBTC}), headers: { 'Content-Type': 'application/json'}}).then(function(result){return result.json();}).then(function(dados){console.log(dados)}).catch(function(erro){console.log(erro);})
   }
 
   loginn() {

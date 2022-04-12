@@ -47,6 +47,7 @@ export class PerfilComponent implements OnInit {
     }).then(function (result) {
       return result.json();
     }).then((dados) => {
+      console.log(dados.list)
       this.listamoeda = dados.list;
     }
     ).catch(function (erro) { console.log(erro); })
@@ -82,7 +83,7 @@ export class PerfilComponent implements OnInit {
     }
 
     addbtc(quantidadebtc){
-      fetch('/api/adicionar_btc',
+      fetch('/api/adicionarmais_btc',
     {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

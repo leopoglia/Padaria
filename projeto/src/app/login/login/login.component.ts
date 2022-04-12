@@ -2,16 +2,35 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
+import {
+  AuthService,
+  GoogleLoginProvider
+} from 'angular-6-social-login-v2';
+
 @Component({
-  selector: 'app-pagina-principal',
-  templateUrl: './pagina-principal.component.html',
-  styleUrls: ['./pagina-principal.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class PaginaPrincipalComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private usuarioService: UsuarioService) {
+    private usuarioService: UsuarioService,
+    private socialAuthService: AuthService
+    ) {
+  }
+
+  public socialSignIn() {
+    let socialPlatformProvider;
+    socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+        console.log("Sign in data : ", userData);
+
+      }
+    );
   }
 
   login = ""
@@ -19,6 +38,7 @@ export class PaginaPrincipalComponent implements OnInit {
   ID = ""
 
   ngOnInit() {
+
   }
 
 

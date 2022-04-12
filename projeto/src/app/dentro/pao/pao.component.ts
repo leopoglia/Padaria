@@ -21,6 +21,7 @@ export class PaoComponent implements OnInit {
   valor = "";
   idPessoa = localStorage.getItem('ID');
   listamoeda = undefined;
+  procura = undefined;
   
   comprarItem(item) {
     this.router.navigate(['/padaria/', item.ID])
@@ -50,6 +51,23 @@ export class PaoComponent implements OnInit {
       this.listamoeda = dados.list;
     }
     ).catch(function (erro) { console.log(erro); })
+  }
+
+  procurar(){
+    fetch('/api/buscar_pesquisa',
+      {
+        method: 'POST', 
+        body: JSON.stringify({
+          pesquisa: this.procura
+        }),
+        headers: { 'Content-Type': 'application/json' }
+      }).then(function (result) {
+        return result.json();
+      }).then((dados) => {
+        this.lista = dados.list;
+      }
+      ).catch(function (erro) { console.log(erro); })
+      
   }
 
   menuicon() {

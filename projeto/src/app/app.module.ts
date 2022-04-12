@@ -7,6 +7,7 @@ import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
 import { DentroModule } from './dentro/dentro.module';
 import { LoginModule } from './login/login.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginModule } from './login/login.module';
     LoginModule,
     FormsModule,
     DentroModule,
+    AdminModule,
     RouterModule.forRoot([
       {
       path: '',

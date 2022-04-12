@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaginaPrincipalComponent } from './pagina-principal.component';
+import { PaginaPrincipalComponent } from './login.component';
 
 describe('PaginaPrincipalComponent', () => {
   let component: PaginaPrincipalComponent;

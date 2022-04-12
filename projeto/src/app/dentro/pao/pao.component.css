@@ -2,7 +2,7 @@
     margin: 0;
 }
 
-body{
+body {
     width: 100%;
     height: 100%;
     background-color: #eeeeee;
@@ -20,16 +20,15 @@ body{
     border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
     background: #424242;
 }
 
-::-webkit-scrollbar-thumb:active{
+::-webkit-scrollbar-thumb:active {
     background: #000;
 }
 
-
-#imgproduto{
+#imgproduto {
     width: 200px;
     height: 180px;
 }
@@ -59,7 +58,6 @@ body{
     justify-content: flex-start;
     z-index: 1;
     margin-left: 10px;
-
 }
 
 #containernav a {
@@ -102,7 +100,7 @@ body{
     transition: 0.4s;
 }
 
-#menuicon{
+#menuicon {
     position: absolute;
     right: 0;
     margin-right: 50px;
@@ -118,46 +116,53 @@ body{
     justify-content: center;
 }
 
-#a, #b, #c{
+#a,
+#b,
+#c {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#menuicon a{
+#menuicon a {
     text-decoration: none;
     color: #000;
 }
 
-#a:hover, #b:hover, #c:hover{
+#a:hover,
+#b:hover,
+#c:hover {
     background-color: rgb(235, 235, 235);
     border-radius: 8px;
 }
 
-#menuicon span{
+#menuicon span {
     text-decoration: none;
     margin-left: 35px;
 }
 
-
-#icona, #iconb, #iconc{
+#icona,
+#iconb,
+#iconc {
     width: 0;
 }
 
-#a:hover, #b:hover, #c:hover{
+#a:hover,
+#b:hover,
+#c:hover {
     background-color: rgb(235, 235, 235);
     color: #d46815;
     fill: #d46815;
     cursor: pointer;
 }
 
-#menuicon .ionicon{
+#menuicon .ionicon {
     position: absolute;
     margin-left: 20px;
     left: 0;
 }
 
-#procurarprodutos{
+#procurarprodutos {
     width: 100%;
     height: 50px;
     background-color: #c7c7c7;
@@ -166,19 +171,19 @@ body{
     align-items: center;
 }
 
-#inputprocurar{
+#inputprocurar {
     width: 400px;
     height: 40px;
     background-color: #eeeeee;
     border-radius: 8px;
-    margin-right: 15px !important;
+    margin-right: 5px !important;
 }
 
-#inputprocurar:hover{
+#inputprocurar:hover {
     background-color: #dddddd;
 }
 
-#inputproduto{
+#inputproduto {
     margin-left: 35px;
     font-size: 14px;
     width: 80%;
@@ -188,12 +193,12 @@ body{
     background-color: transparent;
 }
 
-#containerprodutos{
+#containerprodutos {
     background-color: #eeeeee;
     text-align: center;
 }
 
-.produto{
+.produto {
     width: 500px;
     height: 200px;
     background-color: #c7c7c7;
@@ -205,18 +210,17 @@ body{
     z-index: 1;
 }
 
-.produto img{
+.produto img {
     border-radius: 20px;
     margin-left: 10px;
 }
 
-
-.produtoinfos{
+.produtoinfos {
     width: 100%;
     height: 100%;
 }
 
-.produtoname{
+.produtoname {
     width: 100%;
     height: 50px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -229,7 +233,7 @@ body{
     box-sizing: border-box;
 }
 
-.produtodesc{
+.produtodesc {
     width: 100%;
     height: 90px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -245,7 +249,7 @@ body{
     text-overflow: ellipsis;
 }
 
-.produtofooter{
+.produtofooter {
     width: 100%;
     height: 50px;
     display: flex;
@@ -253,7 +257,7 @@ body{
     justify-content: center;
 }
 
-.estrelas{
+.estrelas {
     width: 50%;
     height: 50px;
     display: flex;
@@ -261,7 +265,7 @@ body{
     justify-content: center;
 }
 
-.preco{
+.preco {
     width: 40%;
     height: 40px;
     display: flex;
@@ -274,32 +278,32 @@ body{
     transition: 0.3s;
 }
 
-.preco:hover{
+.preco:hover {
     background-color: #964406;
 }
 
-.estrelas .ionicon{
+.estrelas .ionicon {
     width: 25px;
     height: 25px;
     color: rgb(180, 143, 21);
     cursor: pointer;
 }
 
-.preco .ionicon{
+.preco .ionicon {
     margin-top: 3px;
     width: 25px;
     height: 25px;
     fill: #eeeeee;
 }
 
-.preco p{
+.preco p {
     font-size: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
     color: #eeeeee;
 }
 
-#inputprocurar .ionicon{
+#inputprocurar .ionicon {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -311,11 +315,11 @@ body{
     fill: #eeeeee;
 }
 
-#inputprocurar .ionicon:hover{
+#inputprocurar .ionicon:hover {
     background-color: #acacac;
 }
 
-#wallet{
+#wallet {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -330,35 +334,50 @@ body{
     padding: 10px;
 }
 
-#person .ionicon{
+#person .ionicon {
     fill: #fff;
     width: 22px;
     position: relative;
     margin-left: 0;
 }
 
-@media(max-width: 600px){
-    #containernav a{
+#put {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btcinput {
+    width: 75px;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #d46815;
+}
+
+@media(max-width: 600px) {
+    #containernav a {
         width: 80px;
         font-size: 14px;
     }
-
-    #icon{
+    #icon {
         width: 60px;
         height: 60px;
     }
-
-    .produto{
+    .produto {
         width: 100%;
         margin: 0px;
         margin-top: 10px;
     }
-
-    #procurarprodutos{
+    #procurarprodutos {
         justify-content: center;
     }
-
-    .produtodesc{
+    .produtodesc {
         width: 90%;
     }
 }

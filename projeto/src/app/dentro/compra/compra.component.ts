@@ -70,14 +70,37 @@ export class CompraComponent implements OnInit {
         });
   }
 
-  comprar() {
+  comprar(item) {
+    if(this.listamoeda[0].VALORUSD > item.PRECO){ 
     fetch('/api/adicionar_compra', { method: 'POST', body: JSON.stringify({ idProduto: this.id, idPessoa: this.idPessoa, cep: this.CEP }), headers: { 'Content-Type': 'application/json' } }).then(function (result) { return result.json(); }).then(function (dados) {  }).catch(function (erro) { console.log(erro); })
+    fetch('/api/adicionarmenos_btc', { method: 'POST', body: JSON.stringify({ idPessoa: this.idPessoa, valorAdd: item.PRECO }), headers: { 'Content-Type': 'application/json' } }).then(function (result) { return result.json(); }).then(function (dados) {  }).catch(function (erro) { console.log(erro); })
+
+    document.getElementById('alertasucesso').style.color = "white"
+    document.getElementById('alertasucesso').style.width = "300px"
+
+    setTimeout(function () {
+      document.getElementById('alertasucesso').style.color = "transparent"
+      document.getElementById('alertasucesso').style.width = "0px"
+    }, 2000);
+
+    
+    setTimeout(function () {
+      document.location.reload();
+    }, 150);
+
+    }else{
+      document.getElementById('alertaerro').style.color = "white"
+      document.getElementById('alertaerro').style.width = "300px"
+
+      setTimeout(function () {
+        document.getElementById('alertaerro').style.color = "transparent"
+        document.getElementById('alertaerro').style.width = "0px"
+      }, 2000);
+    }
   }
 
   
   menuicon(){
-
-
     if(document.getElementById('menuicon').style.height == '300px'){
       document.getElementById('menuicon').style.width = '0px';
       document.getElementById('menuicon').style.height = '0px';

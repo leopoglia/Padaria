@@ -9,6 +9,15 @@ inserirRota('/buscar_usuario', function(dados, resposta) {
     });
 });
 
+inserirRota('/buscar_usuario_especifico', function(dados, resposta) {
+    database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}"`).then(result => {
+        console.log('result:', result)
+        resposta({ user: result[0] })
+    }).catch(erro => {
+        resposta({ erro: 'Erro ao LOGAR o usuário!' })
+    });
+});
+
 inserirRota('/login', function(dados, resposta) {
     database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}" AND PASSWORD = "${dados.password}" LIMIT 1`).then(result => {
         console.log('result:', result)

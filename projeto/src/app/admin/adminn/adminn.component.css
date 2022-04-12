@@ -8,7 +8,6 @@ a {
     text-decoration: none;
     outline: none;
     color: rgb(81, 53, 17);
-    ;
 }
 
 body {
@@ -41,42 +40,48 @@ svg {
 }
 
 #divlogo {
+    margin-left: 40px;
     position: absolute;
-    top: 45px;
+    top: 80px;
+    margin-right: 250px;
     display: grid;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: white;
-    width: 250px;
+    width: 150px;
     border-radius: 20px;
 }
 
 #logo {
-    width: 100px;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 130px;
+    width: 80px;
+    height: 80px;
 }
 
 #container {
     width: 30%;
     min-width: 350px;
-    height: 550px;
+    height: 420px;
     background-color: #fff;
     border-radius: 20px;
     display: grid;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     box-shadow: 0px 0px 20px rgb(44, 44, 44);
     margin-top: 60px;
     background-image: url('http://1.bp.blogspot.com/-NdDzxlAMI0I/VH3Gkv1neqI/AAAAAAAACBA/BlHgy8Rb8tY/s1600/efeit%2Bonda.png');
     background-position: 0 -130PX;
 }
 
-#submitgoogle{
+#submitgoogle {
     width: 100%;
     height: 50px;
 }
 
 #inputdiv {
+    margin-top: 100px;
     width: 100%;
     height: 200px;
     align-items: center;
@@ -84,16 +89,18 @@ svg {
     text-align: center;
 }
 
-h1 {
-    color: rgb(81, 53, 17);
+#divlogo h1 {
+    color: #a91515;
     text-decoration: none;
+    width: 250px;
+    margin-left: 100px;
 }
 
 #login,
 #senha,
 #subimit,
 #registro {
-    margin-top: 15px;
+    margin-top: 25px;
     width: 300px;
     height: 50px;
     border-radius: 10px;
@@ -110,19 +117,23 @@ h1 {
     background-color: #cacaca;
 }
 
+#registro {
+    background-color: transparent;
+    cursor: default;
+    color: transparent;
+}
+
 #subimit {
-    margin-top: 50px !important;
     width: 180px !important;
     text-align: center;
     padding-left: 0px !important;
     cursor: pointer;
-    font-weight: 700;
     background-color: #a91515;
     color: white;
 }
 
 #subimit:hover {
-    background-color: #800c0c;
+    background-color: #851010;
 }
 
 #googlediv {
@@ -139,8 +150,35 @@ h1 {
     margin-top: 10px;
 }
 
-#logo {
+.log {
     position: absolute;
-    top: 80px;
-    width: 150px;
+}
+
+#spanlogin,
+#spansenha,
+#spannome {
+    font-size: 0px;
+    margin-left: -300px;
+    transition: 0.3s;
+}
+
+#footercontainer {
+    width: 100%;
+}
+
+#alertaerro {
+    width: 0px;
+    height: 50px;
+    background-color: rgb(146, 1, 1);
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    margin-right: 50px;
+    transition: 0.3s;
 }

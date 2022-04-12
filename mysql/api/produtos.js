@@ -31,6 +31,16 @@ inserirRota('/buscar_produto_especifico', function(dados, resposta) {
     });
 });
 
+inserirRota('/buscar_pesquisa', function(dados, resposta) {
+    database(`SELECT * FROM PRODUTO WHERE NOME LIKE "%${dados.pesquisa}%"`).then(result => {
+        console.log('PRODUTO BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('PRODUTO NÃO BUSCADO')
+        resposta({ erro: 'Erro ao BUSCAR o produto!' })
+    });
+});
+
 
 inserirRota('/excluir_produto', function name(dados, resposta) {
 
