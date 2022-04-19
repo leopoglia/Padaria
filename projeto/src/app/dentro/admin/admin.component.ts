@@ -15,113 +15,62 @@ export class AdminComponent implements OnInit {
 
   }
 
-  nomeproduto = ""
-  descricao = ""
-  preco = ""
-  img64 = localStorage.getItem('img64')
-  foto = undefined
-  img65 = undefined
-  excluir = ""
-
+  login = ""
+  senha = ""
+  ID = ""
 
   ngOnInit() {
+
   }
 
-  mudanca(file) {
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      this.img65 = reader.result;    
-    };
-  }
-
-  criarproduto() {
-    fetch('/api/criar_produto',
-    {
-        method: 'POST',
-        body: JSON.stringify(
-            {
-                nome: this.nomeproduto, descricao: this.descricao, preco: this.preco, img: this.img65
-            }
-        ),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-  ).then(function (result){
-    return result.json();
-  }).then((dados)=>{
-   }).catch(function(erro){
-    console.log(erro)
-  })
-  this.nomeproduto = ""
-  this.descricao = ""
-  this.preco = ""
-  this.foto = undefined
-  }
-
-  excluirproduto(){
-    fetch('/api/excluir_produto',
-    {
-        method: 'POST',
-        body: JSON.stringify(
-            {
-                ID: this.excluir
-            }
-        ),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-  ).then(function (result){
-    return result.json();
-  }).then((dados)=>{
-   }).catch(function(erro){
-    console.log(erro)
-  })
-  }
-  
- 
-  
-  menuicon(){
-    if(document.getElementById('menuicon').style.height == '300px'){
-      document.getElementById('menuicon').style.width = '0px';
-      document.getElementById('menuicon').style.height = '0px';
-      document.getElementById('menuicon').style.fontSize = '0px';
-      document.getElementById('a').style.height = '0px';
-      document.getElementById('a').style.width = '0px';
-      document.getElementById('b').style.width = '0px';
-      document.getElementById('b').style.width = '0px';
-      document.getElementById('c').style.width = '0px';
-      document.getElementById('c').style.width = '0px';
-      document.getElementById('icona').style.width = '0px';
-      document.getElementById('iconb').style.width = '0px';
-      document.getElementById('iconc').style.width = '0px';
 
 
-
-    }else{
-      document.getElementById('menuicon').style.width = '200px';
-      document.getElementById('menuicon').style.height = '300px';
-      document.getElementById('menuicon').style.fontSize = '20px';
-      document.getElementById('a').style.height = '100px';
-      document.getElementById('b').style.height = '100px';
-      document.getElementById('c').style.height = '100px';
-
-      document.getElementById('a').style.width = '200px';
-      document.getElementById('b').style.width = '200px';
-      document.getElementById('c').style.width = '200px';
-      document.getElementById('icona').style.width = '30px';
-      document.getElementById('iconb').style.width = '30px';
-      document.getElementById('iconc').style.width = '30px';
-    }
-  }
-
-  logout(){
-    localStorage.removeItem('login');
-    localStorage.removeItem('senha');
-    localStorage.removeItem('img64');
-    localStorage.removeItem('img65');
+  voltar() {
     this.router.navigate(['/'])
   }
+
+  entrar() {
+    fetch('/api/login',
+      {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            nickname: this.login, password: this.senha
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    ).then(function (result) {
+      return result.json();
+    }).then((dados) => {
+        localStorage.setItem('img64', dados.user.IMG);
+        localStorage.setItem('login', this.login);
+        localStorage.setItem('nome', dados.user.NOME)
+        localStorage.setItem('senha', this.senha);
+        localStorage.setItem('ID', dados.user.ID)
+        this.router.navigate(['/admin'])
+    }).catch(function (erro) {
+      
+      document.getElementById('alertaerro').style.color = "white"
+      document.getElementById('alertaerro').style.width = "300px"
+
+      setTimeout(function () {
+        document.getElementById('alertaerro').style.color = "transparent"
+        document.getElementById('alertaerro').style.width = "0px"
+      }, 2000);
+    })
+  }
+
+  loginn() {
+    document.getElementById('spansenha').style.fontSize = '0px';
+    document.getElementById('spanlogin').style.fontSize = '15px';
+  }
+
+  senhaa() {
+    document.getElementById('spanlogin').style.fontSize = '0px';
+    document.getElementById('spansenha').style.fontSize = '15px';
+  }
+
 }

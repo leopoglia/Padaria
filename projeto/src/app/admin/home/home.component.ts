@@ -1,39 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {ViewEncapsulation} from '@angular/core';
-
-
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { 
-  }
+  constructor(private router: Router) { }
 
   img64 = localStorage.getItem('img64');
+  login = localStorage.getItem('login');
+  nome = localStorage.getItem('nome');
   idPessoa = localStorage.getItem('ID');
   listamoeda = undefined;
 
 
   ngOnInit() {
-    fetch('/api/buscar_btc',
-    {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        idPessoa: this.idPessoa
-      }),
-    }).then(function (result) {
-      return result.json();
-    }).then((dados) => {
-      this.listamoeda = dados.list;
-    }
-    ).catch(function (erro) { console.log(erro); })
+   
   }
 
   menuicon(){

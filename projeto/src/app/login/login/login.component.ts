@@ -18,7 +18,7 @@ export class PaginaPrincipalComponent implements OnInit {
     private router: Router,
     private usuarioService: UsuarioService,
     private socialAuthService: AuthService
-    ) {
+  ) {
   }
 
   public socialSignIn() {
@@ -29,6 +29,73 @@ export class PaginaPrincipalComponent implements OnInit {
       (userData) => {
         console.log("Sign in data : ", userData);
 
+        fetch('/api/buscar_usuario_especifico',
+        {
+            method: 'POST',
+            body: JSON.stringify(
+                {
+                    nickname: userData.email
+                }
+            ),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+      ).then(function (result){
+        return result.json();
+      }).then((dados)=>{
+        localStorage.setItem('login', userData.email);
+        localStorage.setItem('senha', userData.id);
+        localStorage.setItem('nome', userData.name);
+        localStorage.setItem('img64', userData.image);
+        localStorage.setItem('ID', dados.user.ID)
+        this.router.navigate(['/padaria'])
+       }).catch((erro) =>{
+        fetch('/api/criar_usuario',
+        {
+            method: 'POST',
+            body: JSON.stringify(
+                {
+                    nome: userData.name, nickname: userData.email, password: userData.id, img: userData.image
+                }
+            ),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+      ).then(function (result){
+        return result.json();
+      }).then((dados)=>{
+        fetch('/api/buscar_usuario_especifico',
+        {
+            method: 'POST',
+            body: JSON.stringify(
+                {
+                    nickname: userData.email
+                }
+            ),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+      ).then(function (result){
+        return result.json();
+      }).then((dados)=>{
+        fetch('/api/adicionar_btc', {method: 'POST', body: JSON.stringify({idPessoa: dados.user.ID}), headers: { 'Content-Type': 'application/json'}}).then(function(result){return result.json();}).then(function(dados){console.log(dados)}).catch(function(erro){console.log(erro);})
+        localStorage.setItem('login', userData.email);
+        localStorage.setItem('nome', userData.name);
+        localStorage.setItem('img64', userData.image);
+        localStorage.setItem('senha', userData.id);
+        localStorage.setItem('ID', dados.user.ID)
+        this.router.navigate(['/padaria'])
+       }).catch(function(erro){
+        console.log(erro)
+      })  
+      
+       }).catch(function(erro){
+        
+      })
+      })  
       }
     );
   }
@@ -63,13 +130,14 @@ export class PaginaPrincipalComponent implements OnInit {
     ).then(function (result) {
       return result.json();
     }).then((dados) => {
-        localStorage.setItem('img64', dados.user.IMG);
-        localStorage.setItem('login', this.login);
-        localStorage.setItem('senha', this.senha);
-        localStorage.setItem('ID', dados.user.ID)
-        this.router.navigate(['/padaria'])
+      localStorage.setItem('img64', dados.user.IMG);
+      localStorage.setItem('login', this.login);
+      localStorage.setItem('nome', dados.user.NOME)
+      localStorage.setItem('senha', this.senha);
+      localStorage.setItem('ID', dados.user.ID)
+      this.router.navigate(['/padaria'])
     }).catch(function (erro) {
-      
+
       document.getElementById('alertaerro').style.color = "white"
       document.getElementById('alertaerro').style.width = "300px"
 

@@ -10,10 +10,6 @@
 
 <body>
 
-    <div id="fundovoltar" (click)="voltar()">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Back</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
-    </div>
-
     <div id="divlogo">
         <h1>Registro</h1>
     </div>
@@ -27,7 +23,7 @@
             <input id="registro" (click)="nomee()" [(ngModel)]="nome" type="text" placeholder="Nome ou apelido"><span class="log" id="spannome">Nome</span>
             <div id="fundoinputicon">
                 <div id="checkbox"><input type="checkbox" id="check">
-                    <p>ACEITE OS <br> <a href="" id="termos">TERMOS DE SERVIÇO</a></p>
+                    <p>ACEITE OS <br> <a id="termos">TERMOS DE SERVIÇO</a></p>
                 </div>
                 <label id="inputicon" for="files" class="btn"><img id="fotoprofile" alt="">INSIRA UMA FOTO
             </label>

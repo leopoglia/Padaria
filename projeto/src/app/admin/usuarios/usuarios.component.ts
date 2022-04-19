@@ -1,28 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import {ViewEncapsulation} from '@angular/core';
-
-
+import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-usuarios',
+  templateUrl: './usuarios.component.html',
+  styleUrls: ['./usuarios.component.css']
 })
-export class HomeComponent implements OnInit {
+export class UsuariosComponent implements OnInit {
 
-  constructor(private router: Router) { 
-  }
-
-  img64 = localStorage.getItem('img64');
-  idPessoa = localStorage.getItem('ID');
-  listamoeda = undefined;
-
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    fetch('/api/buscar_btc',
+    fetch('/api/buscar_usuario_admin',
     {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -31,10 +21,19 @@ export class HomeComponent implements OnInit {
     }).then(function (result) {
       return result.json();
     }).then((dados) => {
-      this.listamoeda = dados.list;
+      this.lista = dados.list;
+
     }
     ).catch(function (erro) { console.log(erro); })
+
+
+
   }
+
+  img64 = localStorage.getItem('img64')
+  lista = [];
+  idPessoa = localStorage.getItem('ID');
+  listamoeda = undefined;
 
   menuicon(){
     document.getElementById('menuicon').classList.toggle("menuicon2");
@@ -47,5 +46,4 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem('img65');
     this.router.navigate(['/'])
   }
-
 }

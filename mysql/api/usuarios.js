@@ -9,6 +9,17 @@ inserirRota('/buscar_usuario', function(dados, resposta) {
     });
 });
 
+inserirRota('/buscar_usuario_admin', function(dados, resposta) {
+    console.log(dados);
+    database(`SELECT USER.NOME, USER.NICKNAME, USER.IMG, MOEDA.VALORUSD, MOEDA.NOME AS BTC FROM USER INNER JOIN MOEDA ON USER.ID = MOEDA.ID_USUARIO`).then(result => {
+        console.log('USUÁRIO BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('USUÁRIOS NÃO BUSCADO')
+        resposta({ erro: 'Erro ao BUSCAR o usuário!' })
+    });
+});
+
 inserirRota('/buscar_usuario_especifico', function(dados, resposta) {
     database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}"`).then(result => {
         console.log('result:', result)

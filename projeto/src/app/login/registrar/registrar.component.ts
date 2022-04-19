@@ -94,7 +94,7 @@ constructor(private router: Router) {
  }).catch(function(erro){
   console.log(erro)
 })  
-  }
+}
 
   addbtc(IDBTC){
     fetch('/api/adicionar_btc', {method: 'POST', body: JSON.stringify({idPessoa: this.IDBTC}), headers: { 'Content-Type': 'application/json'}}).then(function(result){return result.json();}).then(function(dados){console.log(dados)}).catch(function(erro){console.log(erro);})

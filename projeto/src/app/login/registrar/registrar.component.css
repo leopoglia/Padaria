@@ -25,26 +25,6 @@ body {
     justify-content: center;
 }
 
-#fundovoltar {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 15px;
-    left: 15px;
-    border-radius: 50%;
-    background-color: #a95415;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-svg {
-    color: #fff;
-}
-
-#fundovoltar:hover {
-    background-color: #9c4604;
-}
-
 #divlogo {
     margin-left: 40px;
     position: absolute;
@@ -195,6 +175,7 @@ h1 {
     font-size: 0px;
     margin-left: -300px;
     transition: 0.3s;
+    color: #6b6b6b;
 }
 
 #alertaerro {

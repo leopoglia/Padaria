@@ -11,45 +11,27 @@ export class SobreComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    fetch('/api/buscar_btc',
+    {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        idPessoa: this.idPessoa
+      }),
+    }).then(function (result) {
+      return result.json();
+    }).then((dados) => {
+      this.listamoeda = dados.list;
+    }
+    ).catch(function (erro) { console.log(erro); })
   }
 
   img64 = localStorage.getItem('img64')
-
-  menuicon() {
-
-    if (document.getElementById('menuicon').style.height == '300px') {
-      document.getElementById('menuicon').style.width = '0px';
-      document.getElementById('menuicon').style.height = '0px';
-      document.getElementById('menuicon').style.fontSize = '0px';
-      document.getElementById('a').style.height = '0px';
-      document.getElementById('a').style.width = '0px';
-      document.getElementById('b').style.width = '0px';
-      document.getElementById('b').style.width = '0px';
-      document.getElementById('c').style.width = '0px';
-      document.getElementById('c').style.width = '0px';
-      document.getElementById('icona').style.width = '0px';
-      document.getElementById('iconb').style.width = '0px';
-      document.getElementById('iconc').style.width = '0px';
+  listamoeda = []
+  idPessoa = localStorage.getItem('ID');
 
 
-
-    } else {
-      document.getElementById('menuicon').style.width = '200px';
-      document.getElementById('menuicon').style.height = '300px';
-      document.getElementById('menuicon').style.fontSize = '20px';
-      document.getElementById('a').style.height = '100px';
-      document.getElementById('b').style.height = '100px';
-      document.getElementById('c').style.height = '100px';
-
-      document.getElementById('a').style.width = '200px';
-      document.getElementById('b').style.width = '200px';
-      document.getElementById('c').style.width = '200px';
-      document.getElementById('icona').style.width = '30px';
-      document.getElementById('iconb').style.width = '30px';
-      document.getElementById('iconc').style.width = '30px';
-    }
-
-
+  menuicon(){
+    document.getElementById('menuicon').classList.toggle("menuicon2");
   }
 
   logout() {
