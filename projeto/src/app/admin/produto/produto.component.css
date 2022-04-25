@@ -1,4 +1,3 @@
-
 #headercontainer {
     background-color: #851010 !important;
 }
@@ -7,15 +6,17 @@
     background-color: #a91515 !important;
     color: #fff;
 }
+
 #iconperson {
     border: 1px solid #851010 !important;
 }
 
-#a:hover, #b:hover, #c:hover{
+#a:hover,
+#b:hover,
+#c:hover {
     color: #851010 !important;
     fill: #851010 !important;
 }
-
 
 #fundocriarproduto {
     width: 100%;
@@ -62,6 +63,21 @@
     justify-content: center;
 }
 
+#tituloproduto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a91515;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#titulopronto {
+    background-color: #851010;
+}
+
 #listarprodutos,
 #editarproduto {
     width: 100%;
@@ -100,7 +116,7 @@
 #fotoproduto:hover,
 #nomeproduto:hover,
 #descricaoproduto:hover,
-#precoproduto:hover{
+#precoproduto:hover {
     background-color: #d8d8d8d8;
 }
 
@@ -115,12 +131,16 @@
     justify-content: center;
 }
 
-#botaoenviar, #botaoexcluir, #botaolistar {
+#botaoenviar,
+#botaoexcluir,
+#botaolistar {
     background-color: #a91515;
     color: #fff;
 }
 
-#botaoenviar:hover, #botaoexcluir:hover, #botaolistar:hover{
+#botaoenviar:hover,
+#botaoexcluir:hover,
+#botaolistar:hover {
     background-color: #851010;
 }
 
@@ -132,6 +152,10 @@
     justify-content: center;
 }
 
+#botaolistar {
+    width: 100% !important;
+}
+
 #footerdadosprodutos {
     margin-top: 10px;
     width: 100%;
@@ -139,6 +163,59 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+#buscar {
+    margin-left: 5px;
+    height: 40px;
+    width: 45px;
+    background-color: #a91515;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#buscar:hover {
+    background-color: #851010;
+}
+
+#lupa {
+    width: 25px;
+    height: 25px;
+}
+
+#fundoinput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#alertaerro,
+#alertasucesso {
+    width: 0px;
+    height: 50px;
+    background-color: rgb(146, 1, 1);
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    margin-right: 50px;
+    transition: 0.2s;
+}
+
+#alertasucesso {
+    background-color: green !important;
 }
 
 @media(max-width: 1000px) {

@@ -101,6 +101,20 @@ inserirRota('/buscar_produto_carrinhos', function(dados, resposta) {
     });
 });
 
+inserirRota('/buscar_total_carrinho', function(dados, resposta) {
+    database(`SELECT SUM(PRODUTO.PRECO) AS PRECOTOTAL FROM CARRINHO 
+    INNER JOIN PRODUTO
+    ON CARRINHO.ID_PRODUTO == PRODUTO.ID
+    WHERE ID_USUARIO == "${dados.idPessoa}"`).then(result => {
+        console.log('CARRINHO BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('CARRINHO NÃO BUSCADO')
+        resposta({ erro: 'Erro ao BUSCAR o carrinho!' })
+    });
+});
+
+
 inserirRota('/adicionar_compra', function name(dados, resposta) {
 
     database(`INSERT INTO COMPRA(ID_PRODUTO, ID_USUARIO, cep) VALUES ("${dados.idProduto}", "${dados.idPessoa}", "${dados.cep}")`)
@@ -127,3 +141,40 @@ inserirRota('/buscar_compra', function(dados, resposta) {
         resposta({ erro: 'Erro ao BUSCAR o compra!' })
     });
 });
+
+
+inserirRota('/editar_produto_nome', function name(dados, resposta) {
+
+    database(`UPDATE PRODUTO SET NOME = "${dados.nomeProduto}" WHERE ID = "${dados.ID}"`)
+        .then(result => {
+            console.log('PRODUTO COMPRADO COM SUCESSO')
+            resposta({ message: 'PRODUTO COMPRADO COM SUCESSO!' })
+        }).catch(erro => {
+            console.log('PRODUTO NÃO COMPRADO')
+            resposta({ erro: 'Erro ao COMPRAR produto!' })
+        });
+})
+
+inserirRota('/editar_produto_descricao', function name(dados, resposta) {
+
+    database(`UPDATE PRODUTO SET DESCRICAO = "${dados.descricaoProduto}" WHERE ID = "${dados.ID}"`)
+        .then(result => {
+            console.log('PRODUTO COMPRADO COM SUCESSO')
+            resposta({ message: 'PRODUTO COMPRADO COM SUCESSO!' })
+        }).catch(erro => {
+            console.log('PRODUTO NÃO COMPRADO')
+            resposta({ erro: 'Erro ao COMPRAR produto!' })
+        });
+})
+
+inserirRota('/editar_produto_preco', function name(dados, resposta) {
+
+    database(`UPDATE PRODUTO SET PRECO = "${dados.precoProduto}" WHERE ID = "${dados.ID}"`)
+        .then(result => {
+            console.log('PRODUTO COMPRADO COM SUCESSO')
+            resposta({ message: 'PRODUTO COMPRADO COM SUCESSO!' })
+        }).catch(erro => {
+            console.log('PRODUTO NÃO COMPRADO')
+            resposta({ erro: 'Erro ao COMPRAR produto!' })
+        });
+})

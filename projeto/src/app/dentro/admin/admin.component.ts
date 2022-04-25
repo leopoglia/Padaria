@@ -30,12 +30,12 @@ export class AdminComponent implements OnInit {
   }
 
   entrar() {
-    fetch('/api/login',
+    fetch('/api/buscar_admin',
       {
         method: 'POST',
         body: JSON.stringify(
           {
-            nickname: this.login, password: this.senha
+            nome: this.login, password: this.senha
           }
         ),
         headers: {
@@ -45,14 +45,14 @@ export class AdminComponent implements OnInit {
     ).then(function (result) {
       return result.json();
     }).then((dados) => {
-        localStorage.setItem('img64', dados.user.IMG);
+        localStorage.setItem('img64', dados.list[0].IMG);
         localStorage.setItem('login', this.login);
-        localStorage.setItem('nome', dados.user.NOME)
+        localStorage.setItem('nome', dados.list[0].NOME)
         localStorage.setItem('senha', this.senha);
-        localStorage.setItem('ID', dados.user.ID)
+        localStorage.setItem('ID', dados.list[0].ID)
+        localStorage.setItem('admin', "ok")
         this.router.navigate(['/admin'])
-    }).catch(function (erro) {
-      
+    }).catch(function(erro) {
       document.getElementById('alertaerro').style.color = "white"
       document.getElementById('alertaerro').style.width = "300px"
 

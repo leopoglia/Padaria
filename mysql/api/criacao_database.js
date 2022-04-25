@@ -86,10 +86,9 @@ database(`CREATE TABLE IF NOT EXISTS COMENTARIOS (
 
 database(`CREATE TABLE IF NOT EXISTS ADMIN (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    NOME varchar(30) not null,
-    NICKNAME varchar(30) unique not null,
-    PASSWORD varchar(30) not null,
-    IMG LONGTEXT(4294967295)
+    ID_USUARIO int,
+    FOREIGN KEY(ID_USUARIO) REFERENCES USER(ID) 
+    ON UPDATE CASCADE ON DELETE CASCADE
     )`).then(result => {
     console.log('TABELA ADMIN CRIADA =)')
 }).catch(erro => {

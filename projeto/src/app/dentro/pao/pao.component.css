@@ -183,6 +183,23 @@
     background-color: #d46815;
 }
 
+#cadastrado {
+    font-size: 18px;
+    margin-top: 120px;
+}
+
+#cadastrado span {
+    background-color: #d46815;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#cadastrado span:hover {
+    background-color: #964406;
+}
+
 @media(max-width: 600px) {
     #containernav a {
         width: 80px;

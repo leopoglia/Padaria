@@ -129,15 +129,32 @@
 }
 
 #fundotitulo{
-    width: 100%;
+    width: 90%;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#fundodofundodotitulo{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #titulo{
-    font-size: 30px;
+    font-size: 20px;
+    background-color: #d46815;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#titulo:hover{
+    background-color: #964406;
 }
 
 #x{
@@ -155,6 +172,22 @@
     width: 22px;
     position: relative;
     margin-left: 0;
+}
+
+#botaocomprar{
+    margin-top: 15px;
+    background-color: #d46815;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    border: none;
+}
+
+#botaocomprar:hover{
+    background-color: #964406;
 }
 
 @media(max-width: 700px){

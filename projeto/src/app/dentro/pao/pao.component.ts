@@ -22,6 +22,8 @@ export class PaoComponent implements OnInit {
   idPessoa = localStorage.getItem('ID');
   listamoeda = undefined;
   procura = undefined;
+  i = 0;
+
   
   comprarItem(item) {
     this.router.navigate(['/padaria/', item.ID])
@@ -36,6 +38,7 @@ export class PaoComponent implements OnInit {
         return result.json();
       }).then((dados) => {
         this.lista = dados.list;
+        this.i = this.lista.length
       }
       ).catch(function (erro) { console.log(erro); })
       
@@ -79,10 +82,7 @@ export class PaoComponent implements OnInit {
     localStorage.removeItem('senha');
     localStorage.removeItem('img64');
     localStorage.removeItem('img65');
+    localStorage.removeItem('admin');
     this.router.navigate(['/'])
   }
-
-
-
-
 }

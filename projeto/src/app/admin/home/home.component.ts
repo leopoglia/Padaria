@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem('senha');
     localStorage.removeItem('img64');
     localStorage.removeItem('img65');
+    localStorage.removeItem('admin');
     this.router.navigate(['/'])
   }
 

@@ -1,7 +1,18 @@
-
-#person .ionicon{
+#person .ionicon {
     fill: #fff;
     width: 22px;
     position: relative;
     margin-left: 0;
+}
+
+#containerinfos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialicons {
+    width: 40px;
+    height: 40px;
+    margin: 20px;
 }

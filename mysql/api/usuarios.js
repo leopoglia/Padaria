@@ -9,6 +9,17 @@ inserirRota('/buscar_usuario', function(dados, resposta) {
     });
 });
 
+inserirRota('/buscar_admin', function(dados, resposta) {
+    console.log(dados);
+    database(`SELECT * FROM ADMIN INNER JOIN USER ON ADMIN.ID_USUARIO = USER.ID WHERE USER.NICKNAME = "${dados.nome}" AND USER.PASSWORD = "${dados.password}"`).then(result => {
+        console.log('USUÁRIO BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('USUÁRIOS NÃO BUSCADO')
+        resposta({ erro: 'Erro ao BUSCAR o usuário!' })
+    });
+});
+
 inserirRota('/buscar_usuario_admin', function(dados, resposta) {
     console.log(dados);
     database(`SELECT USER.NOME, USER.NICKNAME, USER.IMG, MOEDA.VALORUSD, MOEDA.NOME AS BTC FROM USER INNER JOIN MOEDA ON USER.ID = MOEDA.ID_USUARIO`).then(result => {
@@ -17,6 +28,48 @@ inserirRota('/buscar_usuario_admin', function(dados, resposta) {
     }).catch(erro => {
         console.log('USUÁRIOS NÃO BUSCADO')
         resposta({ erro: 'Erro ao BUSCAR o usuário!' })
+    });
+});
+
+inserirRota('/buscar_usuario_rico', function(dados, resposta) {
+    console.log(dados);
+    database(`SELECT USER.NOME, USER.NICKNAME, USER.IMG, MOEDA.VALORUSD, MOEDA.NOME AS BTC FROM USER INNER JOIN MOEDA ON USER.ID = MOEDA.ID_USUARIO ORDER BY MOEDA.VALORUSD DESC`).then(result => {
+        console.log('USUÁRIO BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('USUÁRIOS NÃO BUSCADO')
+        resposta({ erro: 'Erro ao BUSCAR o usuário!' })
+    });
+});
+
+inserirRota('/buscar_usuario_nome_asc', function(dados, resposta) {
+    console.log(dados);
+    database(`SELECT USER.NOME, USER.NICKNAME, USER.IMG, MOEDA.VALORUSD, MOEDA.NOME AS BTC FROM USER INNER JOIN MOEDA ON USER.ID = MOEDA.ID_USUARIO ORDER BY USER.NOME ASC`).then(result => {
+        console.log('USUÁRIO BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('USUÁRIOS NÃO BUSCADO')
+        resposta({ erro: 'Erro ao BUSCAR o usuário!' })
+    });
+});
+
+inserirRota('/buscar_usuario_nome_desc', function(dados, resposta) {
+    console.log(dados);
+    database(`SELECT USER.NOME, USER.NICKNAME, USER.IMG, MOEDA.VALORUSD, MOEDA.NOME AS BTC FROM USER INNER JOIN MOEDA ON USER.ID = MOEDA.ID_USUARIO ORDER BY USER.NOME DESC`).then(result => {
+        console.log('USUÁRIO BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('USUÁRIOS NÃO BUSCADO')
+        resposta({ erro: 'Erro ao BUSCAR o usuário!' })
+    });
+});
+
+inserirRota('/buscar_usuario_admin_search', function(dados, resposta) {
+    database(`SELECT USER.NOME, USER.NICKNAME, USER.IMG,  MOEDA.VALORUSD, MOEDA.NOME AS BTC FROM USER INNER JOIN MOEDA ON USER.ID = MOEDA.ID_USUARIO  WHERE USER.NOME LIKE "%${dados.nome}%"`).then(result => {
+        console.log('result:', result)
+        resposta({ list: result })
+    }).catch(erro => {
+        resposta({ erro: 'Erro ao LOGAR o usuário!' })
     });
 });
 

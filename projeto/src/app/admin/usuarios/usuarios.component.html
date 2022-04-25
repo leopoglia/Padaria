@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gran Pão - Usuários</title>
 </head>
 
 <body>
     <div id="container">
         <div id="headercontainer">
-            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=250&dpr=2" alt="">
+            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=70&dpr=2" alt="">
             <nav id="containernav">
-                <a href="admin/"><img src="https://i.imgur.com/kvFs5A7.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
-                <a href="admin/produtos"><img src="https://i.imgur.com/e3euscz.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
-                <a href="admin/usuarios"><img src="https://i.imgur.com/X9ArgDx.png" style="width: 20px; margin-right: 5px;" alt=""> Usuários</a>
+                <a href="admin/"><img src="https://i.imgur.com/AN8wCoh.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
+                <a href="admin/produtos"><img src="https://i.imgur.com/ecruX9i.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
+                <a href="admin/usuarios"><img src="https://i.imgur.com/d9QXIpx.png" style="width: 20px; margin-right: 5px;" alt=""> Usuários</a>
                 <div id="hoverbuton"></div>
             </nav>
             <div id="person">
@@ -44,19 +44,30 @@
             </div>
         </div>
 
-        <div id="fundotitulo">
-            <div id="titulo">Usuários</div>
+        <div id="procurarprodutos">
+            <div id="put">
+                <button (click)="ordernarico()" id="botaoordenar">BTC</button>
+                <button (click)="ordernanomeasc()" id="botaoordenar">A-Z</button>
+                <button (click)="ordernanomedesc()" id="botaoordenar">Z-A</button>
+                <div id="inputprocurar"><img src="https://i.imgur.com/cjfJ0Ib.png" style="width: 15px; position: absolute; margin: 13px;" alt="">
+                    <input type="text" id="inputproduto" [(ngModel)]='nomePessoa' placeholder="Procure seu produto aqui...">
+                </div>
+                <div id="btcinput" (click)="buscarPessoa()">Procurar</div>
+            </div>
         </div>
+
+        <div id="titulo"><br></div>
 
         <div id="fundocarrinho">
             <div class="containerprodutos">
                 <div id="produto" *ngFor="let item of lista; let i = index"><img id="imgproduto" [src]=item.IMG alt="">
                     <div class="produtoinfos">
-                        <div class="produtoname"><p>{{item.NOME}}</p> 
+                        <div class="produtoname">
+                            <p>{{item.NOME}}</p>
                             <div id="x" (click)="excluirproduto(item, i)">X</div>
                         </div>
                         <div class="produtodesc">Usuário: {{item.NICKNAME}}<br>Saldo: {{item.VALORUSD.toPrecision(3)}}<br>Moeda: {{item.BTC}}</div>
-                        <div class="produtofooter"> 
+                        <div class="produtofooter">
                         </div>
                     </div>
                 </div>

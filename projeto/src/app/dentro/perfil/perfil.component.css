@@ -1,21 +1,24 @@
-#maincontainer{
+body {
+    overflow-y: hidden;
+}
+
+#maincontainer {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#profilebackground{
+#profilebackground {
     width: 100%;
-    height: 70vh;
-    margin-top: 20px;
+    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
-#divisiononebackground, #historico{
+#divisiononebackground,
+#historico {
     height: 40vh;
     width: 40vw;
     border-radius: 5px;
@@ -27,16 +30,14 @@
     border: 1px solid #b6b6b6;
 }
 
-#historico{
+#historico {
     margin-left: 50px;
     width: 30%;
-    height: 80%;
+    height: 60vh !important;
     display: block !important;
-    overflow: auto;
-    overflow-x: hidden;
 }
 
-#headerhistorico{
+#headerhistorico {
     width: 100%;
     height: 10%;
     display: flex;
@@ -46,7 +47,7 @@
     margin-left: 20px;
 }
 
-#adicionardinheiro{
+#adicionardinheiro {
     width: 80%;
     height: 70%;
     background-color: #d46815;
@@ -58,11 +59,11 @@
     cursor: pointer;
 }
 
-#adicionardinheiro:hover{
+#adicionardinheiro:hover {
     background-color: #9E4E12;
 }
 
-#adicionardinheiro svg{
+#adicionardinheiro svg {
     margin-left: 10px;
     padding: 2px;
     width: 35px;
@@ -70,7 +71,7 @@
     fill: #fff;
 }
 
-.pedido{
+.pedido {
     width: 90%;
     height: 80px;
     background-color: #dbdbdb;
@@ -79,13 +80,15 @@
     display: flex;
 }
 
-#pedidos{
-    width: 100%;
+#pedidos {
+    width: 95%;
     height: 90%;
     margin-left: 20px;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
-#fotoicon{
+#fotoicon {
     height: 100%;
     width: 40%;
     display: flex;
@@ -93,24 +96,23 @@
     justify-content: center;
 }
 
-
-#fotoprofile{
+#fotoprofile {
     width: 100%;
     border-radius: 50%;
     cursor: pointer;
 }
 
-#fotoprofile:hover{
+#fotoprofile:hover {
     opacity: 70%;
 }
 
-#backgroundinputicon{
+#backgroundinputicon {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#iconperson2{
+#iconperson2 {
     width: 200px !important;
     height: 200px !important;
     border-radius: 100%;
@@ -118,11 +120,11 @@
     border: 6px solid transparent;
 }
 
-#iconperson2:hover{
+#iconperson2:hover {
     border: 6px solid #c2c6ca;
 }
 
-#infosprofile{
+#infosprofile {
     height: 80%;
     width: 50%;
     display: grid;
@@ -130,55 +132,59 @@
     justify-content: center;
 }
 
-#inputicon{
-    width:80%;
+#inputicon {
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#infoprobileinput{
+#infoprobileinput {
     width: 250px;
     height: 45px;
     background-color: #dbdbdb;
     border: 1px solid #b6b6b6;
     opacity: 70%;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
     color: #000;
     font-weight: 500;
     cursor: pointer;
     padding-left: 10px;
+    padding-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-#infoprobileinput:hover{
+#mainmodal #infoprobileinput {
+    text-overflow: inherit !important;
+}
+
+#infoprobileinput:hover {
     border: 1px solid #a7a6a6;
 }
 
-#divisiontwo{
+#divisiontwo {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#imgproduto{
+#imgproduto {
     width: 60px;
     height: 60px;
     border-radius: 10px;
     margin: 10px;
 }
 
-#textos{
+#textos {
     margin-top: 10px;
     width: 90%;
     height: 100%;
     font-size: 13px;
 }
 
-#inserirdinheiro{
+#inserirdinheiro {
     margin-top: 25px;
     background-color: #c7c7c7;
     height: 100px;
@@ -189,12 +195,12 @@
     border: 1px solid #b6b6b6;
 }
 
-#modal #inserirdinheiro{
+#modal #inserirdinheiro {
     margin-top: 50px;
     border: none !important;
 }
 
-#modal{
+#modal {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.178);
@@ -205,7 +211,7 @@
     display: none;
 }
 
-#fundomodal{
+#fundomodal {
     width: 30%;
     height: 65%;
     border-radius: 5px;
@@ -213,7 +219,7 @@
     margin-bottom: 5px;
 }
 
-#mainmodal{
+#mainmodal {
     width: 100%;
     height: 80%;
     display: flex;
@@ -221,42 +227,42 @@
     justify-content: center;
 }
 
-#person .ionicon{
+#person .ionicon {
     fill: #fff;
     width: 22px;
 }
 
-#metamask{
-    width: 150px;
-    height: 150px;
+#metamask {
+    width: 100px;
+    height: 100px;
 }
 
-#mainmodal #infoprobileinput{
+#mainmodal #infoprobileinput {
     width: 100%;
     opacity: 100%;
     padding-right: 15px;
 }
 
-#mainmodal #inserirdinheiro{
+#mainmodal #inserirdinheiro {
     background-color: transparent;
 }
 
-#mainmodal #adicionardinheiro:hover{
+#mainmodal #adicionardinheiro:hover {
     background-color: #c55907;
 }
 
-#setabaixo{
+#setabaixo {
     width: 50px;
 }
 
-#fundoseta{
+#fundoseta {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#inputcoin{
+#inputcoin {
     width: 90%;
     height: 90%;
     outline: none;
@@ -264,7 +270,7 @@
     border: none;
 }
 
-#headermodal{
+#headermodal {
     width: 100%;
     height: 50px;
     display: flex;
@@ -272,7 +278,7 @@
     justify-content: center;
 }
 
-#fundoxis{
+#fundoxis {
     width: 100%;
     height: 50px;
     display: flex;
@@ -280,7 +286,7 @@
     justify-content: flex-end;
 }
 
-#xis{
+#xis {
     display: flex;
     border-radius: 5px;
     align-items: center;
@@ -295,48 +301,61 @@
     border: 1px solid #5a2801;
 }
 
-@media(max-width: 950px){
-    #iconperson2{
+#botaocomprar {
+    margin-top: 15px;
+    background-color: #d46815;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    border: none;
+}
+
+#botaocomprar:hover {
+    background-color: #964406;
+}
+
+#fundovazio {
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media(max-width: 950px) {
+    #iconperson2 {
         width: 130px !important;
         height: 130px !important;
     }
-
-    #fundomodal{
+    #fundomodal {
         width: 60%;
     }
 }
 
-@media(max-width: 600px){
-    #containernav a{
+@media(max-width: 600px) {
+    #containernav a {
         width: 80px;
         font-size: 14px;
     }
-
-    #fundomodal{
+    #fundomodal {
         width: 90%;
     }
-
-    #icon{
+    #icon {
         width: 60px;
         height: 60px;
     }
-    
-    #profilebackground{
+    #profilebackground {
         display: block;
     }
-
-    #divisiononebackground{
+    #divisiononebackground {
         width: 100%;
     }
-
-    #historico{
+    #historico {
         width: 100%;
         margin-left: 0px;
         margin-top: 50px;
     }
-
-    #fundodivionsone{
+    #fundodivionsone {
         width: 100%;
     }
-
 }

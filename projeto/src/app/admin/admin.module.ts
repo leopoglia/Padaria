@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import CheckLogged from '../chekLogged.canActivate';
 
 const routes: Routes = [
-  {path: 'admin', 
+  {path: 'admin', canActivate: [CheckLogged], 
   children: [
   {path: '' , component: HomeComponent},
   {path: 'produtos' , component: ProdutoComponent},

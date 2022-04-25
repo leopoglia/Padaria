@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gran Pão - Carrinho</title>
 </head>
 
 <body>
     <div id="container">
         <div id="headercontainer">
-            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=250&dpr=2" alt="">
+            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=70&dpr=2" alt="">
             <nav id="containernav">
-                <a href="padaria/"><img src="https://i.imgur.com/kvFs5A7.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
-                <a href="padaria/produtos"><img src="https://i.imgur.com/e3euscz.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
-                <a href="padaria/sobre"><img src="https://i.imgur.com/X9ArgDx.png" style="width: 20px; margin-right: 5px;" alt=""> Sobre</a>
+                <a href="padaria/"><img src="https://i.imgur.com/AN8wCoh.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
+                <a href="padaria/produtos"><img src="https://i.imgur.com/ecruX9i.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
+                <a href="padaria/sobre"><img src="https://i.imgur.com/d9QXIpx.png" style="width: 20px; margin-right: 5px;" alt=""> Sobre</a>
                 <div id="hoverbuton"></div>
             </nav>
             <div id="person">
@@ -44,12 +44,14 @@
             </div>
         </div>
 
-        <div id="fundotitulo">
-            <div id="titulo">Meu Carrinho</div>
-        </div>
-
         <div id="fundocarrinho">
             <div class="containerprodutos">
+                <div id="fundodofundodotitulo">
+                <div id="fundotitulo">
+                    <div id="titulo">Meu Carrinho</div><div id="titulo">TOTAL: {{total.toPrecision(3)}}</div>
+                </div>
+                </div>
+                <div *ngIf="i == 0" style="font-size: 20px;">O carrinho está vazio 😞<div><button id="botaocomprar" (click)="comprarItems()">Vá as compras!</button></div></div>
                 <div id="produto" *ngFor="let item of lista; let i = index"><img id="imgproduto" [src]=item.IMG alt="">
                     <div class="produtoinfos">
                         <div class="produtoname"><p>{{item.NOME}}</p> 

@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gran Pão - Perfil</title>
 </head>
 
 <body>
     <div id="container">
         <div id="headercontainer">
-            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=250&dpr=2" alt="">
+            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=70&dpr=2" alt="">
             <nav id="containernav">
-                <a href="padaria/"><img src="https://i.imgur.com/kvFs5A7.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
-                <a href="padaria/produtos"><img src="https://i.imgur.com/e3euscz.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
-                <a href="padaria/sobre"><img src="https://i.imgur.com/X9ArgDx.png" style="width: 20px; margin-right: 5px;" alt=""> Sobre</a>
+                <a href="padaria/"><img src="https://i.imgur.com/AN8wCoh.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
+                <a href="padaria/produtos"><img src="https://i.imgur.com/ecruX9i.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
+                <a href="padaria/sobre"><img src="https://i.imgur.com/d9QXIpx.png" style="width: 20px; margin-right: 5px;" alt=""> Sobre</a>
                 <div id="hoverbuton"></div>
             </nav>
             <div id="person">
@@ -49,12 +49,12 @@
                 <div id="fundodivionsone">
                     <div id="divisiononebackground">
                         <div id="fotoicon">
-                            <img id="iconperson2" [src]=img64 style="height: 100px; width: 100px" alt="">
+                            <img id="iconperson2" [src]=img64 style="height: 100px; width: 100px" alt=""/>
                         </div>
                         <div id="infosprofile">
-                            <div id="infoprobileinput">Usuário: {{login}}</div>
-                            <div id="infoprobileinput">Nome: {{nome}}</div>
-                            <div id="infoprobileinput">Moeda: GRN/BRL</div>
+                            <div id="infoprobileinput"><span>Usuário: {{login}}</span></div>
+                            <div id="infoprobileinput"><span>Nome: {{nome}}</span></div>
+                            <div id="infoprobileinput"><span>Moeda: GRN/BRL</span></div>
                         </div>
                     </div>
                     <div id="inserirdinheiro">
@@ -65,6 +65,9 @@
                 </div>
                 <div id="historico">
                     <div id="headerhistorico">HISTÓRICO DE COMPRAS</div>
+                    <div id="fundovazio" *ngIf="i == 0">O histórico de compras está vazio 😞
+                        <div><button id="botaocomprar" (click)="comprarItems()">Vá as compras!</button></div>
+                    </div>
                     <div id="pedidos">
                         <div class="pedido" *ngFor="let item of lista;">
                             <img id="imgproduto" [src]="item.IMG" alt="">
@@ -86,7 +89,7 @@
             <div id="fundoxis">
                 <div id="xis" (click)="fecharmodal()">X</div>
             </div>
-            <div id="headermodal"><img id="metamask" src="https://miro.medium.com/max/1400/1*57crCGVIk7JayBmDIFa70w.png" alt=""></div>
+            <div id="headermodal"><img id="metamask" src="https://miro.medium.com/max/200/1*57crCGVIk7JayBmDIFa70w.png" alt=""></div>
             <div id="mainmodal">
                 <div>
                     <div id="infoprobileinput"><input id="inputcoin" [(ngModel)]='quantidadereais' placeholder="Quantidade em R$">R$</div>

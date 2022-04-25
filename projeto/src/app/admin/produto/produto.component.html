@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gran Pão - Admin</title>
+    <title>Gran Pão - Gerenciar Produtos</title>
 </head>
 
 <body>
     <div id="container">
         <div id="headercontainer">
-            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=250&dpr=2" alt="">
+            <img id="icon" src="https://www.zarla.com/images/zarla-gran-po-1x1-2400x2400-20210611-v84xt4gkt84j6kgwrf3t.png?crop=1:1,smart&width=70&dpr=2" alt="">
             <nav id="containernav">
-                <a href="admin/"><img src="https://i.imgur.com/kvFs5A7.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
-                <a href="admin/produtos"><img src="https://i.imgur.com/e3euscz.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
-                <a href="admin/usuarios"><img src="https://i.imgur.com/X9ArgDx.png" style="width: 20px; margin-right: 5px;" alt=""> Usuários</a>
+                <a href="admin/"><img src="https://i.imgur.com/AN8wCoh.png" style="width: 20px; margin-right: 5px;" alt="">Home</a>
+                <a href="admin/produtos"><img src="https://i.imgur.com/ecruX9i.png" style="width: 20px; margin-right: 5px;" alt=""> Produtos</a>
+                <a href="admin/usuarios"><img src="https://i.imgur.com/d9QXIpx.png" style="width: 20px; margin-right: 5px;" alt=""> Usuários</a>
                 <div id="hoverbuton"></div>
             </nav>
             <div id="person">
@@ -44,7 +44,9 @@
 
         <div id="fundocriarproduto">
             <div id="criarproduto">
-                <div id="headercriarproduto"><h3>PRODUTO</h3></div>
+                <div id="headercriarproduto">
+                    <div id="tituloproduto"><span>PRODUTO</span></div>
+                </div>
                 <div id="dadosproduto">
                     <input id="nomeproduto" [(ngModel)]='nomeproduto' type="text" class="inputmargin" placeholder="NOME">
                     <input id="descricaoproduto" [(ngModel)]='descricao' type="text" class="inputmargin" placeholder="DESCRIÇÃO">
@@ -59,17 +61,31 @@
             </div>
             <div id="menuprodutos">
                 <div id="listarprodutos">
-                    <input type="text" id="nomeproduto" placeholder="ID do Produto:" [(ngModel)]='excluir'>
+                    <div id="fundoinput">
+                        <input type="text" id="nomeproduto" placeholder="ID do Produto:" [(ngModel)]='excluir'>
+                        <div id="buscar" (click)="buscarProduto()"><img id="lupa" src="https://i.imgur.com/9XGqoaQ.png" alt=""></div>
+                    </div>
                     <div id="botaolistar" (click)="excluirproduto()">EXCLUIR PRODUTO</div>
                 </div>
                 <div id="editarproduto">
-                    <input type="text" id="nomeproduto" placeholder="ID do Produto:" [(ngModel)]='editar'>
-                    <div id="botaolistar">EDITAR PRODUTO</div>
+                    <div id="fundoinput">
+                        <input type="text" id="nomeproduto" placeholder="ID do Produto:" [(ngModel)]='editar'>
+                        <div id="buscar" (click)="buscarProduto2()"><img id="lupa" src="https://i.imgur.com/9XGqoaQ.png" alt=""></div>
+                    </div>
+                    <div id="botaolistar" (click)="editarProduto()">EDITAR PRODUTO</div>
 
                 </div>
             </div>
 
         </div>
+    </div>
+
+    <div id="alertaerro">
+        Erro ao criar o produto
+    </div>
+
+    <div id="alertasucesso">
+        Produto criado com sucesso
     </div>
 
 </body>

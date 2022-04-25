@@ -1,6 +1,6 @@
 #fundocriarproduto {
     width: 100%;
-    height: 78.5%;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -34,7 +34,7 @@
 
 #criarproduto {
     width: 50%;
-    height: 85%;
+    min-height: 450px;
     background-color: #c7c7c7;
     border-radius: 20px;
     display: flex;
@@ -157,6 +157,9 @@
 #desc {
     font-size: 12px;
     margin-top: 10px;
+    height: 50px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 #fundoimg {

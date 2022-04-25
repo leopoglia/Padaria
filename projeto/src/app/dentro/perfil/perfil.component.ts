@@ -23,6 +23,7 @@ export class PerfilComponent implements OnInit {
   btcpreco = undefined;
   listamoeda = undefined;
   dinheiro = false
+  i = 0;
 
   ngOnInit() {
     fetch('/api/buscar_compra',
@@ -35,6 +36,7 @@ export class PerfilComponent implements OnInit {
       return result.json();
     }).then((dados) => {
       this.lista = dados.list;
+      this.i = this.lista.length
     }
     ).catch(function (erro) { console.log(erro); })
 
@@ -66,12 +68,16 @@ export class PerfilComponent implements OnInit {
       document.getElementById('modal').style.display = 'none';
     }
 
+
+    comprarItems(){
+      this.router.navigate(['/padaria/produtos'])
+    }
+
     converter(){
       fetch('https://economia.awesomeapi.com.br/last/BTC-BRL')
         .then((resultado) => {
             resultado.json().then((data) => {
-                console.log(data.BTC.low);
-                this.btcpreco = data.BTC.low * 1000;
+                this.btcpreco = data.BTCBRL.bid * 1000;
                 this.quantidadebtc = (this.quantidadereais / this.btcpreco).toPrecision(3);;
 
                 this.addbtc(this.quantidadebtc);
@@ -110,6 +116,7 @@ export class PerfilComponent implements OnInit {
     localStorage.removeItem('senha');
     localStorage.removeItem('img64');
     localStorage.removeItem('img65');
+    localStorage.removeItem('admin');
     this.router.navigate(['/'])
   }
 

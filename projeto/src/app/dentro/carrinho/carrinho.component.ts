@@ -13,6 +13,8 @@ export class CarrinhoComponent implements OnInit {
   lista = [];
   idPessoa = localStorage.getItem('ID');
   listamoeda = undefined;
+  total = undefined;
+  i;
 
 
   ngOnInit() {
@@ -26,6 +28,20 @@ export class CarrinhoComponent implements OnInit {
         return result.json();
       }).then((dados) => {
         this.lista = dados.list;
+        this.i = this.lista.length
+      }
+      ).catch(function (erro) { console.log(erro); })
+
+      fetch('/api/buscar_total_carrinho',
+      {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          idPessoa: this.idPessoa
+        }),
+      }).then(function (result) {
+        return result.json();
+      }).then((dados) => {
+        this.total = dados.list[0].PRECOTOTAL;
       }
       ).catch(function (erro) { console.log(erro); })
 
@@ -47,6 +63,10 @@ export class CarrinhoComponent implements OnInit {
   
   img64 = localStorage.getItem('img64')
   nome = localStorage.getItem('login')
+
+  comprarItems(){
+    this.router.navigate(['/padaria/produtos'])
+  }
 
   comprarItem(item){
     this.router.navigate(['/padaria/', item.ID_PRODUTO, 'compra'])
@@ -80,6 +100,7 @@ export class CarrinhoComponent implements OnInit {
     localStorage.removeItem('senha');
     localStorage.removeItem('img64');
     localStorage.removeItem('img65');
+    localStorage.removeItem('admin');
     this.router.navigate(['/'])
   }
 
