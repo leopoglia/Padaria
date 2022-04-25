@@ -88,7 +88,6 @@ constructor(private router: Router) {
 ).then(function (result){
   return result.json();
 }).then((dados)=>{
-  console.log(dados.user.ID)
   this.IDBTC = dados.user.ID
   this.addbtc(this.IDBTC)
  }).catch(function(erro){
@@ -97,7 +96,7 @@ constructor(private router: Router) {
 }
 
   addbtc(IDBTC){
-    fetch('/api/adicionar_btc', {method: 'POST', body: JSON.stringify({idPessoa: this.IDBTC}), headers: { 'Content-Type': 'application/json'}}).then(function(result){return result.json();}).then(function(dados){console.log(dados)}).catch(function(erro){console.log(erro);})
+    fetch('/api/adicionar_btc', {method: 'POST', body: JSON.stringify({idPessoa: this.IDBTC}), headers: { 'Content-Type': 'application/json'}}).then(function(result){return result.json();}).then(function(dados){}).catch(function(erro){console.log(erro);})
   }
 
   loginn() {

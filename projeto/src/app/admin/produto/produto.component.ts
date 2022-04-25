@@ -100,7 +100,6 @@ export class ProdutoComponent implements OnInit {
     ).then(function (result) {
       return result.json();
     }).then((dados) => {
-      console.log(dados.list[0])
       this.nomeproduto = dados.list[0].NOME
       this.descricao = dados.list[0].DESCRICAO
       this.preco = dados.list[0].PRECO
@@ -127,7 +126,6 @@ export class ProdutoComponent implements OnInit {
     ).then(function (result) {
       return result.json();
     }).then((dados) => {
-      console.log(dados.list[0])
       this.nomeproduto = dados.list[0].NOME
       this.descricao = dados.list[0].DESCRICAO
       this.preco = dados.list[0].PRECO
