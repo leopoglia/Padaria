@@ -113,8 +113,8 @@ body {
 }
 
 #iconperson2 {
-    width: 200px !important;
-    height: 200px !important;
+    width: 180px !important;
+    height: 180px !important;
     border-radius: 100%;
     transition: 0.3s;
     border: 6px solid transparent;
@@ -140,7 +140,6 @@ body {
 }
 
 #infoprobileinput {
-    width: 250px;
     height: 45px;
     background-color: #dbdbdb;
     border: 1px solid #b6b6b6;
@@ -322,7 +321,7 @@ body {
     text-align: center;
 }
 
-@media(max-width: 950px) {
+@media(max-width: 1050px) {
     #iconperson2 {
         width: 130px !important;
         height: 130px !important;
